@@ -10,19 +10,16 @@ import sys
 def save():
     directory = folderPathText.get()
 
-    try:
-        if os.path.exists(directory):
-            p_out = open('watchFolder', 'wb')
-            pickle.dump(directory, p_out)
-            p_out.close()
-        else:
-            tkMessageBox.showerror('ERROR', 'Please select a directory to watch.')
+    if os.path.exists(directory):
+        p_out = open('watchFolder', 'wb')
+        pickle.dump(directory, p_out)
+        p_out.close()
+    else:
+        tkMessageBox.showerror('ERROR', 'Please select a directory to watch.')
         
-        wb = Workbook()
-        wb.save("minutes.xlsx")
-        sys.exit(0)
-    except:
-        tkMessageBox.showerror('ERROR', 'Unexpected error. Please try again.')
+    wb = Workbook()
+    wb.save("minutes.xlsx")
+    sys.exit(0)
 
 def showDirectory():
     directory = tkFileDialog.askdirectory()
