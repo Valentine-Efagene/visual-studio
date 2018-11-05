@@ -1,0 +1,129 @@
+﻿  TrackTest.cpp
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(14): error C2871: 'cv': a namespace with this name does not exist
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(19): error C2065: 'cout': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(26): error C2146: syntax error: missing ';' before identifier 'Legende'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(26): error C2653: 'SimpleBlobDetector': is not a class or namespace name
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(26): error C2065: 'Params': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(26): error C2065: 'pAct': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(27): error C2448: 'Legende': function-style initializer appears to be a function definition
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(77): error C2065: 'vector': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(77): error C2065: 'fileName': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(78): error C2065: 'Mat': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(78): error C2146: syntax error: missing ';' before identifier 'img'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(78): error C2065: 'CV_8UC1': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(78): error C3861: 'img': identifier not found
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(79): error C2653: 'cv': is not a class or namespace name
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(79): error C2065: 'CommandLineParser': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(79): error C2146: syntax error: missing ';' before identifier 'parser'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(79): error C3861: 'parser': identifier not found
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(80): error C2065: 'parser': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(80): error C2228: left of '.has' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(80): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): error C2065: 'fileName': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): error C2228: left of '.push_back' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): error C2065: 'parser': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): error C2228: left of '.get' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(85): error C2065: 'string': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(86): error C2065: 'img': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(86): error C2065: 'fileName': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(86): error C2065: 'IMREAD_COLOR': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(86): error C3861: 'imread': identifier not found
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(87): error C2065: 'img': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(87): error C2228: left of '.rows' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(87): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(87): error C2228: left of '.cols' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(87): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(89): error C2065: 'cout': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(89): error C2065: 'fileName': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(93): error C2653: 'SimpleBlobDetector': is not a class or namespace name
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(93): error C2065: 'Params': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(93): error C2146: syntax error: missing ';' before identifier 'pDefaultBLOB'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(93): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(95): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(95): error C2228: left of '.thresholdStep' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(95): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(96): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(96): error C2228: left of '.minThreshold' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(96): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(97): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(97): error C2228: left of '.maxThreshold' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(97): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(98): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(98): error C2228: left of '.minRepeatability' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(98): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(99): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(99): error C2228: left of '.minDistBetweenBlobs' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(99): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(100): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(100): error C2228: left of '.filterByColor' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(100): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(101): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(101): error C2228: left of '.blobColor' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(101): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(102): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(102): error C2228: left of '.filterByArea' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(102): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(103): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(103): error C2228: left of '.minArea' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(103): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(104): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(104): error C2228: left of '.maxArea' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(104): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(105): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(105): error C2228: left of '.filterByCircularity' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(105): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(106): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(106): error C2228: left of '.minCircularity' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(106): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(107): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(107): error C2228: left of '.maxCircularity' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(107): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(108): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(108): error C2228: left of '.filterByInertia' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(108): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(109): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(109): error C2228: left of '.minInertiaRatio' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(109): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(110): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(110): error C2228: left of '.maxInertiaRatio' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(110): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(111): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(111): error C2228: left of '.filterByConvexity' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(111): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(112): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(112): error C2228: left of '.minConvexity' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(112): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(113): error C2065: 'pDefaultBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(113): error C2228: left of '.maxConvexity' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(113): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(115): error C2065: 'vector': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(115): error C2065: 'typeDesc': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(117): error C2065: 'vector': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(117): error C2653: 'SimpleBlobDetector': is not a class or namespace name
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(117): error C2065: 'Params': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(117): error C2065: 'pBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2065: 'vector': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2653: 'SimpleBlobDetector': is not a class or namespace name
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2065: 'Params': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2039: 'iterator': is not a member of '`global namespace''
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2065: 'iterator': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2146: syntax error: missing ';' before identifier 'itBLOB'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(118): error C2065: 'itBLOB': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(120): error C2065: 'vector': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(120): error C2065: 'Vec3b': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(120): error C2065: 'palette': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C2065: 'palette': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C2228: left of '.push_back' must have class/struct/union
+  c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): note: type is 'unknown-type'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C2065: 'uchar': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C2146: syntax error: missing ')' before identifier 'rand'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C3861: 'Vec3b': identifier not found
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C2146: syntax error: missing ';' before identifier 'rand'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C3861: 'rand': identifier not found
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(123): error C2059: syntax error: ')'
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(130): error C2065: 'typeDesc': undeclared identifier
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(130): error C2228: left of '.push_back' must have class/struct/union
+c:\users\valentyne\source\repos\c++\opencv\tracktest\tracktest\tracktest.cpp(130): fatal error C1003: error count exceeds 100; stopping compilation

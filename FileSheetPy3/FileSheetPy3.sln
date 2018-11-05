@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FileSheetPy3", "FileSheetPy3\FileSheetPy3.pyproj", "{1FBC44D5-3BCC-4582-BCE7-D8DC002A7F6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FBC44D5-3BCC-4582-BCE7-D8DC002A7F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBC44D5-3BCC-4582-BCE7-D8DC002A7F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B850540-E3AF-4B08-B925-D72C9DCFA724}
+	EndGlobalSection
+EndGlobal
