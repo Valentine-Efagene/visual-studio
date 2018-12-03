@@ -25,6 +25,7 @@ def getDirs():
         myFile.write('\n')
 
     myFile.close()
+    folderPathText.delete(0, 'end')
 
 root = Tk()
 root.geometry('500x100')

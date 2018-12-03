@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TensorflowTest", "TensorflowTest\TensorflowTest.pyproj", "{8C0E0884-5964-48A4-8C5D-ED359ED2FF41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C0E0884-5964-48A4-8C5D-ED359ED2FF41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0E0884-5964-48A4-8C5D-ED359ED2FF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB4B8108-80B5-4CD5-940D-B1F2EF6DA83E}
+	EndGlobalSection
+EndGlobal

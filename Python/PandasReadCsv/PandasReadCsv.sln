@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PandasReadCsv", "PandasReadCsv\PandasReadCsv.pyproj", "{A46BBCA1-97D4-407C-B34A-E9BDE7411A78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A46BBCA1-97D4-407C-B34A-E9BDE7411A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46BBCA1-97D4-407C-B34A-E9BDE7411A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5DEC942-C1CB-4959-B07B-3A4A1913EC3A}
+	EndGlobalSection
+EndGlobal

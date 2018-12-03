@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ANN-imal Classification", "ANN-imal Classification\ANN-imal Classification.pyproj", "{176B1F35-05C8-457A-AA3D-1954790C9D05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{176B1F35-05C8-457A-AA3D-1954790C9D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176B1F35-05C8-457A-AA3D-1954790C9D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {404D43F8-E657-44B5-8F0A-39EDD561653F}
+	EndGlobalSection
+EndGlobal

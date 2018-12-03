@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Test</Name>
     <RootNamespace>Test</RootNamespace>
-    <InterpreterId>Global|PythonCore|2.7</InterpreterId>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,9 +23,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Test.py" />
+    <Compile Include="vriseScrapper.py" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|2.7" />
+    <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="digits.png" />
+    <Content Include="numbers.png" />
+    <Content Include="pandasTest.csv" />
+    <Content Include="pandasTest.xlsx" />
+    <Content Include="VRise - the financial affiliate program.html" />
+    <Content Include="VRise_options.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
