@@ -13,16 +13,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            new Thread(() =>
-            {
-                while (true)
-                {
-                    var a = 5;
-                    Console.WriteLine(a);
-                }
-            }).Start();
-
-            Console.ReadLine();
+            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+            IPAddress[] iPAddress = ipHostInfo.AddressList;
+            Console.WriteLine(iPAddress[2]);
         }
     }
 }

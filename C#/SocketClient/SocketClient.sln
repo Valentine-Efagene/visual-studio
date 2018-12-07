@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClient", "SocketClient\SocketClient.csproj", "{402828C8-FD56-4DC7-B08B-B66DC6E6427F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Vchat", "Vchat\Vchat.vdproj", "{4638585F-CB1C-438F-A106-095C84433128}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{402828C8-FD56-4DC7-B08B-B66DC6E6427F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{402828C8-FD56-4DC7-B08B-B66DC6E6427F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{402828C8-FD56-4DC7-B08B-B66DC6E6427F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4638585F-CB1C-438F-A106-095C84433128}.Debug|Any CPU.ActiveCfg = Debug
+		{4638585F-CB1C-438F-A106-095C84433128}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

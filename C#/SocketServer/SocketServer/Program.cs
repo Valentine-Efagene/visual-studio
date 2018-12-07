@@ -13,6 +13,7 @@ namespace Program
             Console.WriteLine("Starting...");
             TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"), 8080);
             server.Start();
+            Console.WriteLine();
             Console.WriteLine("Started.");
             while (true)
             {
