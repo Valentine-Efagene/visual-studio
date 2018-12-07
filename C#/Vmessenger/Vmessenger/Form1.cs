@@ -312,8 +312,13 @@ namespace SocketClient
                     });
                 }
             }
+            catch (Exception ex)
+            {
+                Client.Close();
+            }
             finally
             {
+                Client.Close();
                 sw.Close();
             }
         }
