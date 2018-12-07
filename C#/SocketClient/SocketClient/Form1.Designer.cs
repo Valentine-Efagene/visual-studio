@@ -77,8 +77,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.messageRichTextBox.BackColor = System.Drawing.Color.Black;
             this.messageRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.messageRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageRichTextBox.ForeColor = System.Drawing.Color.Green;
+            this.messageRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageRichTextBox.ForeColor = System.Drawing.Color.White;
             this.messageRichTextBox.Location = new System.Drawing.Point(12, 12);
             this.messageRichTextBox.Name = "messageRichTextBox";
             this.messageRichTextBox.Size = new System.Drawing.Size(638, 47);
@@ -159,6 +159,7 @@
             this.chatHistoryRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.chatHistoryRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chatHistoryRichTextBox.Location = new System.Drawing.Point(12, 61);
             this.chatHistoryRichTextBox.Name = "chatHistoryRichTextBox";
             this.chatHistoryRichTextBox.ReadOnly = true;

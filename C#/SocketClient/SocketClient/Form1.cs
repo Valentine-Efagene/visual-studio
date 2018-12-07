@@ -20,7 +20,7 @@ namespace SocketClient
         bool created = false;
         int connected = 0;
         NetworkStream stream = null;
-        int port = 8080;
+        int port = 12324;
         TcpClient client = null;
         TcpListener server = null;
 
@@ -120,7 +120,7 @@ namespace SocketClient
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("At connection creation line 122" + ex.ToString());
+                        MessageBox.Show("At connection creation line 123" + ex.ToString());
                     }
                 }
             }
@@ -130,6 +130,7 @@ namespace SocketClient
                 {
                     clientBackgroundWorker.CancelAsync();
                     MessageBox.Show("You just terminated the connection");
+                    statusLabel.Text = "...";
                 }
 
                 if (client != null)
@@ -195,7 +196,7 @@ namespace SocketClient
             }
             else
             {
-                server = new TcpListener(IPAddress.Parse(addrssTextBox.Text.Trim(' ')), 8080);
+                server = new TcpListener(IPAddress.Parse(addrssTextBox.Text.Trim(' ')), 12324);
             }
             server.Start();
             this.Invoke((MethodInvoker)delegate
@@ -211,7 +212,7 @@ namespace SocketClient
                     new Thread(new ThreadStart(cw.DoSomethingWithClient)).Start();
                 }catch(Exception ex)
                 {
-                    MessageBox.Show("At server background 189" + ex.ToString());
+                    MessageBox.Show("At server background 214" + ex.ToString());
                 }
             }
         }
@@ -254,12 +255,12 @@ namespace SocketClient
 
         private void aboutButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This app uses port 8080;" +
-                "\n so, please leave alone. There are so many others for you to use." +
-                "Developer:\n" +
+            MessageBox.Show("About App:\nThis app uses port 12324;" +
+                " so, please leave it alone. There are so many others for you to use.\n\n" +
+                "About Developer:\n" +
                 "Name: Valentine Edesiri Efagene\n" +
-                "Whatsapp number: 07053229765" +
-                "Mobile number: 09034360573" +
+                "Whatsapp number: 07053229765\n" +
+                "Mobile number: 09034360573\n" +
                 "Nationality: Nigerian");
         }
     }
@@ -294,7 +295,7 @@ namespace SocketClient
                 {
                     ui.Invoke((MethodInvoker) delegate
                     {
-                        ui.getchatHistoryRichTextBox().AppendText(data + "\n");
+                        ui.getchatHistoryRichTextBox().AppendText("Other person: " + data + "\n");
                     });
                 }
             }
