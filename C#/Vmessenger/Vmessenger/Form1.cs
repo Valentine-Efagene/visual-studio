@@ -14,6 +14,7 @@ namespace SocketClient
 
     public partial class Form1 : Form
     {
+        string preferredName = "Other person";
         bool created = false;
         int connected = 0;
         NetworkStream stream = null;
@@ -204,16 +205,21 @@ namespace SocketClient
             {
                 try
                 {
-                    ClientWorking cw = new ClientWorking(this, server.AcceptTcpClient());
+                    TcpClient c = server.AcceptTcpClient();
+                    ClientWorking cw = new ClientWorking(this, c);
                     stream = (NetworkStream)cw.getStream();
 
                     if(stream != null)
                     {
                         new Thread(new ThreadStart(cw.DoSomethingWithClient)).Start();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            statusLabel.Text = ((IPEndPoint)c.Client.RemoteEndPoint).Address.ToString() + " has joined.";
+                        });
                     }
                 }catch(Exception ex)
                 {
-                    MessageBox.Show("At server background 214" + ex.ToString());
+                    MessageBox.Show("At server background 222" + ex.ToString());
                 }
             }
         }
@@ -240,7 +246,7 @@ namespace SocketClient
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
-                        chatHistoryRichTextBox.AppendText(data + "\n");
+                        chatHistoryRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + ": " + data + "\n");
                     });
                 }
             }
@@ -298,11 +304,11 @@ namespace SocketClient
 
             try
             {
-                while ((data = sr.ReadLine()).Trim(' ') != "")
+                while ((data = sr.ReadLine()).Trim(' ') != "exit")
                 {
                     ui.Invoke((MethodInvoker) delegate
                     {
-                        ui.getchatHistoryRichTextBox().AppendText("Other person: " + data + "\n");
+                        ui.getchatHistoryRichTextBox().AppendText(((IPEndPoint)Client.Client.RemoteEndPoint).Address.ToString() + ": " + data + "\n");
                     });
                 }
             }

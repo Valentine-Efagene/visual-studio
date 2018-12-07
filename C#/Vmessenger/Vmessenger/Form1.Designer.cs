@@ -51,7 +51,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.Black;
             this.submitBtn.Location = new System.Drawing.Point(12, 163);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(80, 23);
+            this.submitBtn.Size = new System.Drawing.Size(47, 23);
             this.submitBtn.TabIndex = 1;
             this.submitBtn.Text = "Send";
             this.submitBtn.UseVisualStyleBackColor = false;
@@ -62,7 +62,7 @@
             this.connectCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.connectCheckBox.AutoSize = true;
             this.connectCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.connectCheckBox.Location = new System.Drawing.Point(256, 167);
+            this.connectCheckBox.Location = new System.Drawing.Point(197, 167);
             this.connectCheckBox.Name = "connectCheckBox";
             this.connectCheckBox.Size = new System.Drawing.Size(45, 17);
             this.connectCheckBox.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(487, 170);
+            this.label1.Location = new System.Drawing.Point(429, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 6;
@@ -102,7 +102,7 @@
             this.createConnectionCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.createConnectionCheckBox.AutoSize = true;
             this.createConnectionCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.createConnectionCheckBox.Location = new System.Drawing.Point(107, 166);
+            this.createConnectionCheckBox.Location = new System.Drawing.Point(65, 166);
             this.createConnectionCheckBox.Name = "createConnectionCheckBox";
             this.createConnectionCheckBox.Size = new System.Drawing.Size(114, 17);
             this.createConnectionCheckBox.TabIndex = 7;
@@ -115,7 +115,7 @@
             this.statusLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.statusLabel.AutoSize = true;
             this.statusLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.statusLabel.Location = new System.Drawing.Point(530, 170);
+            this.statusLabel.Location = new System.Drawing.Point(475, 168);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(16, 13);
             this.statusLabel.TabIndex = 8;
@@ -139,7 +139,7 @@
             // addrssTextBox
             // 
             this.addrssTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.addrssTextBox.Location = new System.Drawing.Point(367, 166);
+            this.addrssTextBox.Location = new System.Drawing.Point(299, 163);
             this.addrssTextBox.Name = "addrssTextBox";
             this.addrssTextBox.Size = new System.Drawing.Size(100, 20);
             this.addrssTextBox.TabIndex = 10;
@@ -148,7 +148,8 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(316, 172);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(248, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 11;

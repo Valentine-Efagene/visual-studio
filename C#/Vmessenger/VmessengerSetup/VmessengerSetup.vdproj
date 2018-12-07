@@ -11,23 +11,18 @@
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
 "SccProvider" = "8:"
+"BackwardsCompatibleGUIDGeneration" = "8:TRUE"
     "Hierarchy"
     {
         "Entry"
         {
-        "MsmKey" = "8:_4A684131A3D047DEB360520B06D27F3D"
+        "MsmKey" = "8:_2D4F82872A214742BC5BF7D38A910E1B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_DB05262B1BB44FB688FED6D10CAFC5AC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_ECA45D5491804053AFF296655735C3D1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,19 +35,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4A684131A3D047DEB360520B06D27F3D"
+        "OwnerKey" = "8:_2D4F82872A214742BC5BF7D38A910E1B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_DB05262B1BB44FB688FED6D10CAFC5AC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_ECA45D5491804053AFF296655735C3D1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -175,20 +164,20 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:VmessengerSetup"
         "ProductCode" = "8:{1F52C19A-ED1F-4E2B-983A-AC190C648860}"
-        "PackageCode" = "8:{3F3A2772-9565-4781-B07A-CBEB46AF47E9}"
+        "PackageCode" = "8:{A46B6C12-39B6-4F0C-AC80-6CD33E9C1ED9}"
         "UpgradeCode" = "8:{D82E9ABE-2C23-4074-9FD7-41DCCB8761CA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
-        "ARPHELPTELEPHONE" = "8:"
+        "Manufacturer" = "8:VEE"
+        "ARPHELPTELEPHONE" = "8:09034360573, 07053229765 (Whatsapp)"
         "ARPHELPLINK" = "8:"
         "Title" = "8:VmessengerSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Valentine Edesiri Efagene"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -694,9 +683,37 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2D4F82872A214742BC5BF7D38A910E1B"
+            {
+            "SourcePath" = "8:..\\Vmessenger\\obj\\Release\\Vmessenger.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_83594D89C2A0463D8035DBC650BB2A2D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Release|Any CPU"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{D73D6B0C-96A1-4E4E-8D73-7D4A75BA0CFE}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_30E9B21791CF493D8F0F61E31BF2CEC0"
             {
-            "SourcePath" = "8:..\\Vmessenger\\obj\\Debug\\Vmessenger.exe"
+            "SourcePath" = "8:..\\Vmessenger\\obj\\Release\\Vmessenger.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B9587A9881524A70BD2331335833E06A"
@@ -722,37 +739,9 @@
                 {
                 }
             }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4A684131A3D047DEB360520B06D27F3D"
-            {
-            "SourcePath" = "8:..\\Vmessenger\\obj\\Debug\\Vmessenger.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_83594D89C2A0463D8035DBC650BB2A2D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|Any CPU"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{D73D6B0C-96A1-4E4E-8D73-7D4A75BA0CFE}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DB05262B1BB44FB688FED6D10CAFC5AC"
             {
-            "SourcePath" = "8:..\\Vmessenger\\obj\\Debug\\Vmessenger.exe"
+            "SourcePath" = "8:..\\Vmessenger\\obj\\Release\\Vmessenger.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0D2193D71CF1407C94791517EC16BADB"
@@ -771,34 +760,6 @@
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:Release|Any CPU"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{D73D6B0C-96A1-4E4E-8D73-7D4A75BA0CFE}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_ECA45D5491804053AFF296655735C3D1"
-            {
-            "SourcePath" = "8:..\\Vmessenger\\obj\\Debug\\Vmessenger.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_83594D89C2A0463D8035DBC650BB2A2D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{D73D6B0C-96A1-4E4E-8D73-7D4A75BA0CFE}"
             "ShowKeyOutput" = "11:TRUE"
