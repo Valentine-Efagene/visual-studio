@@ -52,6 +52,11 @@ namespace SocketClient
             return messageRichTextBox;
         }
 
+        public Label getStatusLabel()
+        {
+            return statusLabel;
+        }
+
         public RichTextBox getchatHistoryRichTextBox()
         {
             return chatHistoryRichTextBox;
@@ -274,30 +279,32 @@ namespace SocketClient
 
     class ClientWorking
     {
-        private Stream ClientStream;
-        private TcpClient Client;
+        private Stream clientStream;
+        private TcpClient client;
         Form1 ui;
+        private string clientIP;
 
-        public ClientWorking(Form1 ui, TcpClient Client)
+        public ClientWorking(Form1 ui, TcpClient client)
         {
-            this.Client = Client;
-            ClientStream = Client.GetStream();
+            this.client = client;
+            clientStream = client.GetStream();
             this.ui = ui;
+            clientIP = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
         }
 
         public Stream getStream()
         {
-            return ClientStream;
+            return clientStream;
         }
 
         public void DoSomethingWithClient()
         {
-            if(ClientStream == null)
+            if(clientStream == null)
             {
                 MessageBox.Show("OK");
             }
 
-            StreamWriter sw = new StreamWriter(ClientStream);
+            StreamWriter sw = new StreamWriter(clientStream);
             StreamReader sr = new StreamReader(sw.BaseStream);
             sw.Flush();
             string data;
@@ -308,17 +315,22 @@ namespace SocketClient
                 {
                     ui.Invoke((MethodInvoker) delegate
                     {
-                        ui.getchatHistoryRichTextBox().AppendText(((IPEndPoint)Client.Client.RemoteEndPoint).Address.ToString() + ": " + data + "\n");
+                        ui.getchatHistoryRichTextBox().AppendText(clientIP + ": " + data + "\n");
                     });
                 }
             }
             catch (Exception ex)
             {
-                Client.Close();
+                client.Close();
+                ui.Invoke((MethodInvoker)delegate
+                {
+                    string a = ex.ToString();
+                    ui.getStatusLabel().Text = clientIP + " has left.";
+                });
             }
             finally
             {
-                Client.Close();
+                client.Close();
                 sw.Close();
             }
         }
