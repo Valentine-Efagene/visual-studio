@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
@@ -120,7 +117,7 @@ namespace SocketClient
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("At connection creation line 123" + ex.ToString());
+                        MessageBox.Show("Line 123 " + ex.ToString());
                     }
                 }
             }
@@ -209,7 +206,11 @@ namespace SocketClient
                 {
                     ClientWorking cw = new ClientWorking(this, server.AcceptTcpClient());
                     stream = (NetworkStream)cw.getStream();
-                    new Thread(new ThreadStart(cw.DoSomethingWithClient)).Start();
+
+                    if(stream != null)
+                    {
+                        new Thread(new ThreadStart(cw.DoSomethingWithClient)).Start();
+                    }
                 }catch(Exception ex)
                 {
                     MessageBox.Show("At server background 214" + ex.ToString());
@@ -285,13 +286,19 @@ namespace SocketClient
 
         public void DoSomethingWithClient()
         {
+            if(ClientStream == null)
+            {
+                MessageBox.Show("OK");
+            }
+
             StreamWriter sw = new StreamWriter(ClientStream);
             StreamReader sr = new StreamReader(sw.BaseStream);
             sw.Flush();
             string data;
+
             try
             {
-                while ((data = sr.ReadLine()) != "")
+                while ((data = sr.ReadLine()).Trim(' ') != "")
                 {
                     ui.Invoke((MethodInvoker) delegate
                     {

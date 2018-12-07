@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vchat.Properties
+namespace SocketClient.Properties
 {
 
 
