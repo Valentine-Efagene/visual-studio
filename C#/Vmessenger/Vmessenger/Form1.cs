@@ -8,14 +8,15 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using System.Threading;
+using System.Collections;
 
 namespace SocketClient
 {
 
     public partial class Form1 : Form
     {
-        string preferredName = "Other person";
-        bool created = false;
+        List<string> connectedIPs = new List<string>();
+        int created = 0;
         int connected = 0;
         NetworkStream stream = null;
         int port = 12324;
@@ -47,6 +48,21 @@ namespace SocketClient
             }
         }
 
+        public BackgroundWorker getserverBackgroundWorker()
+        {
+            return serverBackgroundWorker;
+        }
+
+        public List<string> getConnectedIPs()
+        {
+            return connectedIPs;
+        }
+
+        public RichTextBox getConnectedIPsRichTextBox()
+        {
+            return listOfConnectedRichTextBox;
+        }
+
         public RichTextBox getMessageRichTextBox()
         {
             return messageRichTextBox;
@@ -76,7 +92,7 @@ namespace SocketClient
                 StreamReader sr = new StreamReader(sw.BaseStream);
                 sw.WriteLine(messageRichTextBox.Text);
                 sw.Flush();
-                chatHistoryRichTextBox.AppendText("Me: " + messageRichTextBox.Text + "\n");
+                chatHistoryRichTextBox.AppendText("Me: \n" + messageRichTextBox.Text + "\n");
                 messageRichTextBox.Text = "";
             }
             catch (Exception ex)
@@ -98,6 +114,15 @@ namespace SocketClient
         private void connectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             connected++;
+
+            try
+            {
+                port = Convert.ToInt32(portTextBox.Text.Trim(' '));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter an integer value.");
+            }
 
             if (connectCheckBox.Checked == true)
             {
@@ -132,8 +157,7 @@ namespace SocketClient
                 if (connected > 0)
                 {
                     clientBackgroundWorker.CancelAsync();
-                    MessageBox.Show("You just terminated the connection");
-                    statusLabel.Text = "...";
+                    statusLabel.Text = "Connection to " + ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + " terminated";
                 }
 
                 if (client != null)
@@ -154,21 +178,6 @@ namespace SocketClient
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void statusLabel_Click(object sender, EventArgs e)
         {
 
@@ -176,41 +185,100 @@ namespace SocketClient
 
         private void server_CheckedChanged(object sender, EventArgs e)
         {
-            connectCheckBox.Checked = false;
-            created = !created;
+            created++;
 
-            if(created) {
+            if(createConnectionCheckBox.Checked == true)
+            {
+                try
+                {
+                    Convert.ToInt32(portTextBox.Text.Trim(' '));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please enter an integer value.");
+                    createConnectionCheckBox.Checked = false;
+                    return;
+                }
+
+                if (addrssTextBox.Text == "")
+                {
+                    createConnectionCheckBox.Checked = false;
+                    MessageBox.Show("Please enter an IP address.");
+                    return;
+                }
+                else
+                {
+                    server = new TcpListener(IPAddress.Parse(addrssTextBox.Text.Trim(' ')), port);
+                }
+
+                server.Start();
+
+                try
+                {
+                    if (serverBackgroundWorker.IsBusy)
+                    {
+                        MessageBox.Show("server background task is still running!");
+                    }
+                    else
+                    {
+                        serverBackgroundWorker.RunWorkerAsync();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }else
+            {
+                if (created > 0)
+                {
+                    serverBackgroundWorker.CancelAsync();
+                    statusLabel.Text = "Connection terminated.";
+                }
+
                 if (client != null)
                 {
                     client.Close();
+                }
+
+                if (stream != null)
+                {
                     stream.Close();
                 }
 
-                serverBackgroundWorker.RunWorkerAsync();
+                if (server != null)
+                {
+                    server.Stop();
+                }
             }
         }
 
         private void serverBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (addrssTextBox.Text == "")
-            {
-                createConnectionCheckBox.Checked = false;
-                MessageBox.Show("Please enter an IP address.");
-            }
-            else
-            {
-                server = new TcpListener(IPAddress.Parse(addrssTextBox.Text.Trim(' ')), 12324);
-            }
-            server.Start();
             this.Invoke((MethodInvoker)delegate
             {
                 statusLabel.Text = "Connection created";
             });
+
             while (true)
             {
+                if (serverBackgroundWorker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
                 try
                 {
                     TcpClient c = server.AcceptTcpClient();
+                    DialogResult res = MessageBox.Show("Do you want to allow " + ((IPEndPoint)c.Client.RemoteEndPoint).Address.ToString() +
+                        " to join?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (!(res == DialogResult.Yes))
+                    {
+                        return;
+                    }
+
                     ClientWorking cw = new ClientWorking(this, c);
                     stream = (NetworkStream)cw.getStream();
 
@@ -220,11 +288,13 @@ namespace SocketClient
                         this.Invoke((MethodInvoker)delegate
                         {
                             statusLabel.Text = ((IPEndPoint)c.Client.RemoteEndPoint).Address.ToString() + " has joined.";
+                            connectedIPs.Add(((IPEndPoint)c.Client.RemoteEndPoint).Address.ToString());
+                            listOfConnectedRichTextBox.AppendText(((IPEndPoint)c.Client.RemoteEndPoint).Address.ToString() + "\n");
                         });
                     }
                 }catch(Exception ex)
                 {
-                    MessageBox.Show("At server background 222" + ex.ToString());
+                    serverBackgroundWorker.CancelAsync();
                 }
             }
         }
@@ -251,7 +321,7 @@ namespace SocketClient
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
-                        chatHistoryRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + ": " + data + "\n");
+                        chatHistoryRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + ": \n" + data + "\n");
                     });
                 }
             }
@@ -260,20 +330,25 @@ namespace SocketClient
                 this.Invoke((MethodInvoker)delegate
                 {
                     string a = ex.ToString();
-                    statusLabel.Text = "Connection terminated!";
+                    statusLabel.Text = "Connection to " + ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + " terminated";
                 });
             }
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("About App:\nThis app uses port 12324;" +
-                " so, please leave it alone. There are so many others for you to use.\n\n" +
+            MessageBox.Show("About App:\nThis app uses port 12324 as default, but you can change it to allow more connections.\n" +
+                "\n\n" +
                 "About Developer:\n" +
                 "Name: Valentine Edesiri Efagene\n" +
                 "Whatsapp number: 07053229765\n" +
                 "Mobile number: 09034360573\n" +
                 "Nationality: Nigerian");
+        }
+
+        private void addrssTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -315,7 +390,7 @@ namespace SocketClient
                 {
                     ui.Invoke((MethodInvoker) delegate
                     {
-                        ui.getchatHistoryRichTextBox().AppendText(clientIP + ": " + data + "\n");
+                        ui.getchatHistoryRichTextBox().AppendText(clientIP + ": \n" + data + "\n");
                     });
                 }
             }
@@ -327,6 +402,15 @@ namespace SocketClient
                     string a = ex.ToString();
                     ui.getStatusLabel().Text = clientIP + " has left.";
                 });
+
+                ui.getConnectedIPs().Remove(clientIP);
+
+                ui.getConnectedIPsRichTextBox().Text = "";
+
+                foreach (string ip in ui.getConnectedIPs())
+                {
+                    ui.getConnectedIPsRichTextBox().AppendText(ip + "\n");
+                }
             }
             finally
             {
