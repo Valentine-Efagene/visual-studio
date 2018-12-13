@@ -247,7 +247,7 @@
             this.Controls.Add(this.connectCheckBox);
             this.Controls.Add(this.submitBtn);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Vmessenger";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
