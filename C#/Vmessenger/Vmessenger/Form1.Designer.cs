@@ -44,16 +44,17 @@
             this.portTextBox = new System.Windows.Forms.TextBox();
             this.listOfConnectedRichTextBox = new System.Windows.Forms.RichTextBox();
             this.connectedIPsLabel = new System.Windows.Forms.Label();
+            this.clearChatButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // submitBtn
             // 
-            this.submitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.submitBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.submitBtn.BackColor = System.Drawing.Color.Gray;
             this.submitBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.submitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitBtn.ForeColor = System.Drawing.Color.Black;
-            this.submitBtn.Location = new System.Drawing.Point(15, 151);
+            this.submitBtn.Location = new System.Drawing.Point(15, 188);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(47, 23);
             this.submitBtn.TabIndex = 1;
@@ -63,10 +64,10 @@
             // 
             // connectCheckBox
             // 
-            this.connectCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.connectCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.connectCheckBox.AutoSize = true;
             this.connectCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.connectCheckBox.Location = new System.Drawing.Point(207, 152);
+            this.connectCheckBox.Location = new System.Drawing.Point(207, 189);
             this.connectCheckBox.Name = "connectCheckBox";
             this.connectCheckBox.Size = new System.Drawing.Size(48, 17);
             this.connectCheckBox.TabIndex = 3;
@@ -82,20 +83,20 @@
             this.messageRichTextBox.BackColor = System.Drawing.Color.Black;
             this.messageRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.messageRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageRichTextBox.ForeColor = System.Drawing.Color.White;
-            this.messageRichTextBox.Location = new System.Drawing.Point(15, 25);
+            this.messageRichTextBox.ForeColor = System.Drawing.Color.Green;
+            this.messageRichTextBox.Location = new System.Drawing.Point(15, 141);
             this.messageRichTextBox.Name = "messageRichTextBox";
-            this.messageRichTextBox.Size = new System.Drawing.Size(554, 62);
+            this.messageRichTextBox.Size = new System.Drawing.Size(554, 41);
             this.messageRichTextBox.TabIndex = 5;
             this.messageRichTextBox.Text = "";
             this.messageRichTextBox.TextChanged += new System.EventHandler(this.messageRichTextBox_TextChanged);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 186);
+            this.label1.Location = new System.Drawing.Point(12, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 6;
@@ -103,10 +104,10 @@
             // 
             // createConnectionCheckBox
             // 
-            this.createConnectionCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createConnectionCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.createConnectionCheckBox.AutoSize = true;
             this.createConnectionCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.createConnectionCheckBox.Location = new System.Drawing.Point(84, 152);
+            this.createConnectionCheckBox.Location = new System.Drawing.Point(84, 189);
             this.createConnectionCheckBox.Name = "createConnectionCheckBox";
             this.createConnectionCheckBox.Size = new System.Drawing.Size(117, 17);
             this.createConnectionCheckBox.TabIndex = 7;
@@ -119,7 +120,7 @@
             this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.statusLabel.AutoSize = true;
             this.statusLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.statusLabel.Location = new System.Drawing.Point(58, 186);
+            this.statusLabel.Location = new System.Drawing.Point(58, 223);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(16, 13);
             this.statusLabel.TabIndex = 8;
@@ -132,7 +133,7 @@
             this.aboutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aboutButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutButton.Location = new System.Drawing.Point(680, 186);
+            this.aboutButton.Location = new System.Drawing.Point(680, 223);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(22, 22);
             this.aboutButton.TabIndex = 9;
@@ -142,8 +143,8 @@
             // 
             // addrssTextBox
             // 
-            this.addrssTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addrssTextBox.Location = new System.Drawing.Point(321, 151);
+            this.addrssTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.addrssTextBox.Location = new System.Drawing.Point(321, 188);
             this.addrssTextBox.Name = "addrssTextBox";
             this.addrssTextBox.Size = new System.Drawing.Size(100, 20);
             this.addrssTextBox.TabIndex = 10;
@@ -151,10 +152,10 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(257, 153);
+            this.label2.Location = new System.Drawing.Point(257, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 11;
@@ -165,11 +166,14 @@
             this.chatHistoryRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.chatHistoryRichTextBox.BackColor = System.Drawing.Color.Black;
+            this.chatHistoryRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.chatHistoryRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatHistoryRichTextBox.Location = new System.Drawing.Point(15, 85);
+            this.chatHistoryRichTextBox.ForeColor = System.Drawing.Color.Green;
+            this.chatHistoryRichTextBox.Location = new System.Drawing.Point(15, 24);
             this.chatHistoryRichTextBox.Name = "chatHistoryRichTextBox";
             this.chatHistoryRichTextBox.ReadOnly = true;
-            this.chatHistoryRichTextBox.Size = new System.Drawing.Size(554, 61);
+            this.chatHistoryRichTextBox.Size = new System.Drawing.Size(554, 111);
             this.chatHistoryRichTextBox.TabIndex = 12;
             this.chatHistoryRichTextBox.Text = "";
             // 
@@ -186,7 +190,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(437, 156);
+            this.label3.Location = new System.Drawing.Point(437, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 13;
@@ -194,8 +198,8 @@
             // 
             // portTextBox
             // 
-            this.portTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.portTextBox.Location = new System.Drawing.Point(469, 152);
+            this.portTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.portTextBox.Location = new System.Drawing.Point(469, 189);
             this.portTextBox.Name = "portTextBox";
             this.portTextBox.Size = new System.Drawing.Size(100, 20);
             this.portTextBox.TabIndex = 14;
@@ -211,7 +215,7 @@
             this.listOfConnectedRichTextBox.Location = new System.Drawing.Point(582, 25);
             this.listOfConnectedRichTextBox.Name = "listOfConnectedRichTextBox";
             this.listOfConnectedRichTextBox.ReadOnly = true;
-            this.listOfConnectedRichTextBox.Size = new System.Drawing.Size(107, 141);
+            this.listOfConnectedRichTextBox.Size = new System.Drawing.Size(107, 178);
             this.listOfConnectedRichTextBox.TabIndex = 15;
             this.listOfConnectedRichTextBox.Text = "";
             // 
@@ -226,12 +230,24 @@
             this.connectedIPsLabel.TabIndex = 16;
             this.connectedIPsLabel.Text = "Connected devices:";
             // 
+            // clearChatButton
+            // 
+            this.clearChatButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.clearChatButton.Location = new System.Drawing.Point(321, 215);
+            this.clearChatButton.Name = "clearChatButton";
+            this.clearChatButton.Size = new System.Drawing.Size(75, 23);
+            this.clearChatButton.TabIndex = 17;
+            this.clearChatButton.Text = "Clear chat";
+            this.clearChatButton.UseVisualStyleBackColor = true;
+            this.clearChatButton.Click += new System.EventHandler(this.clearChatButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(714, 220);
+            this.ClientSize = new System.Drawing.Size(714, 257);
+            this.Controls.Add(this.clearChatButton);
             this.Controls.Add(this.connectedIPsLabel);
             this.Controls.Add(this.listOfConnectedRichTextBox);
             this.Controls.Add(this.portTextBox);
@@ -271,6 +287,7 @@
         private System.Windows.Forms.TextBox portTextBox;
         private System.Windows.Forms.RichTextBox listOfConnectedRichTextBox;
         private System.Windows.Forms.Label connectedIPsLabel;
+        private System.Windows.Forms.Button clearChatButton;
     }
 }
 

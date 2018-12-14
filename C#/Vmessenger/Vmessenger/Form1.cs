@@ -92,7 +92,8 @@ namespace SocketClient
                 StreamReader sr = new StreamReader(sw.BaseStream);
                 sw.WriteLine(messageRichTextBox.Text);
                 sw.Flush();
-                chatHistoryRichTextBox.AppendText("Me: \n" + messageRichTextBox.Text + "\n");
+                chatHistoryRichTextBox.AppendText("Me: \n" + messageRichTextBox.Text + "\n\n");
+                chatHistoryRichTextBox.ScrollToCaret();
                 messageRichTextBox.Text = "";
             }
             catch (Exception ex)
@@ -143,6 +144,7 @@ namespace SocketClient
                     try
                     {
                         client = new TcpClient(addrssTextBox.Text.Trim(' '), port);
+                        listOfConnectedRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + "\n");
                         stream = client.GetStream();
                         clientBackgroundWorker.RunWorkerAsync();
                     }
@@ -284,7 +286,7 @@ namespace SocketClient
 
                     if(stream != null)
                     {
-                        new Thread(new ThreadStart(cw.DoSomethingWithClient)).Start();
+                        new Thread(new ThreadStart(cw.interact)).Start();
                         this.Invoke((MethodInvoker)delegate
                         {
                             statusLabel.Text = ((IPEndPoint)c.Client.RemoteEndPoint).Address.ToString() + " has joined.";
@@ -321,7 +323,8 @@ namespace SocketClient
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
-                        chatHistoryRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + ": \n" + data + "\n");
+                        chatHistoryRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + ": \n" + data + "\n\n");
+                        chatHistoryRichTextBox.ScrollToCaret();
                     });
                 }
             }
@@ -350,6 +353,11 @@ namespace SocketClient
         {
 
         }
+
+        private void clearChatButton_Click(object sender, EventArgs e)
+        {
+            chatHistoryRichTextBox.Text = "";
+        }
     }
 
     class ClientWorking
@@ -372,7 +380,7 @@ namespace SocketClient
             return clientStream;
         }
 
-        public void DoSomethingWithClient()
+        public void interact()
         {
             if(clientStream == null)
             {
@@ -390,7 +398,8 @@ namespace SocketClient
                 {
                     ui.Invoke((MethodInvoker) delegate
                     {
-                        ui.getchatHistoryRichTextBox().AppendText(clientIP + ": \n" + data + "\n");
+                        ui.getchatHistoryRichTextBox().AppendText(clientIP + ": \n" + data + "\n\n");
+                        ui.getchatHistoryRichTextBox().ScrollToCaret();
                     });
                 }
             }
