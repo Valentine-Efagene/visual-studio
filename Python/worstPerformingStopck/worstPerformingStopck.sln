@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "worstPerformingStopck", "worstPerformingStopck\worstPerformingStopck.pyproj", "{BBA3C576-F111-4A2C-8C86-55230F55E2F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBA3C576-F111-4A2C-8C86-55230F55E2F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA3C576-F111-4A2C-8C86-55230F55E2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBFDE1A3-6C96-4966-BA61-122D15E643C1}
+	EndGlobalSection
+EndGlobal
