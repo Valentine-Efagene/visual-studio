@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 data = [
     {'age': 33, 'sex': 'F', 'BP': 'high', 'cholesterol': 'high',
      'Na': 0.66, 'K': 0.06, 'drug': 'A'},
@@ -40,4 +42,15 @@ data = [
      ]
 
 target = [ d[ 'drug' ] for d in data ]
-print( target )
+[d.pop('drug') for d in data]
+plt.style.use('ggplot')
+age = [d['age'] for d in data]
+sodium = [d['Na'] for d in data]
+potassium = [d['K'] for d in data]
+
+print(age)
+
+plt.scatter(sodium, potassium)
+plt.xlabel('sodium')
+plt.ylabel('potassium')
+plt.show()
