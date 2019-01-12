@@ -136,7 +136,6 @@ namespace Mac_Finder
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                e.Effect = DragDropEffects.All;
                 var path = ((string[])e.Data.GetData(DataFormats.FileDrop))[ 0 ];
 
                 if (Directory.Exists(path))
