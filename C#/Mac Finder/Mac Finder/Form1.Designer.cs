@@ -79,6 +79,7 @@
             this.rtbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbResult.Location = new System.Drawing.Point(149, 116);
             this.rtbResult.Name = "rtbResult";
+            this.rtbResult.ReadOnly = true;
             this.rtbResult.Size = new System.Drawing.Size(340, 164);
             this.rtbResult.TabIndex = 3;
             this.rtbResult.Text = "";

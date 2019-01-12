@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Mac_Finder
 {
@@ -85,8 +86,18 @@ namespace Mac_Finder
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            string fileName = tbFolder.Text;
+            string MAC = tbMAC.Text.Trim();
             rtbResult.Text = "";
+            string pattern = "[a-fA-F0-9]{4}.[a-fA-F0-9]{4}.[a-fA-F0-9]{4}";
+            Regex rgx = new Regex(pattern);
+
+            if (!rgx.IsMatch(MAC))
+            {
+                rtbResult.AppendText(MAC + " is not a valid MAC address!");
+                return;
+            }
+
+            string fileName = tbFolder.Text;
             int count = 0;
 
             if (Directory.Exists(fileName))
