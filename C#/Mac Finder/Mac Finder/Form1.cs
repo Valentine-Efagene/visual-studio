@@ -69,5 +69,45 @@ namespace Mac_Finder
         {
 
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("About App:\nThis app simply searches for a string in all the files in a folder.\n" +
+                "The original intent was to use it to search for MAC addresses in a folder containing several\n" +
+                "MAC access control lists. However, its scope is not limited to MAC addresses." +
+                "\n\n" +
+                "About Developer:\n" +
+                "Name: Valentine Edesiri Efagene\n" +
+                "Whatsapp number: 07053229765\n" +
+                "Mobile number: 09034360573\n" +
+                "Nationality: Nigerian");
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            string fileName = tbFolder.Text;
+            rtcResult.Text = "";
+
+            if (Directory.Exists(fileName))
+            {
+                string[] fileList = Directory.GetFiles(tbFolder.Text);
+
+                foreach (string s in fileList)
+                {
+                    string[] lines = File.ReadAllLines(s);
+                    
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(s))
+                    {
+                        foreach(string line in lines)
+                        {
+                            if(!line.Contains(tbMAC.Text.Trim().ToLower()))
+                            {
+                                file.WriteLine(line);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
