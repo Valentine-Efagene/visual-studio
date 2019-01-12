@@ -35,7 +35,7 @@ namespace Mac_Finder
         {
             int count = 0;
             string fileName = tbFolder.Text;
-            rtcResult.Text = "";
+            rtbResult.Text = "";
 
             if (Directory.Exists(fileName))
             {
@@ -51,17 +51,17 @@ namespace Mac_Finder
 
                         if(count == 1)
                         {
-                            rtcResult.Text = tbMAC.Text.Trim() + " was found in " + "\n\n";
+                            rtbResult.Text = tbMAC.Text.Trim() + " was found in " + "\n\n";
                         }
 
-                        rtcResult.AppendText(count + ". " + Path.GetFileName(s) + "\n");
+                        rtbResult.AppendText(count + ". " + Path.GetFileName(s) + "\n");
                     }
                 }
             }
             
             if( count == 0)
             {
-                rtcResult.Text = tbMAC.Text + " was not found.";
+                rtbResult.Text = tbMAC.Text + " was not found.";
             }
         }
 
@@ -86,7 +86,8 @@ namespace Mac_Finder
         private void btnRemove_Click(object sender, EventArgs e)
         {
             string fileName = tbFolder.Text;
-            rtcResult.Text = "";
+            rtbResult.Text = "";
+            int count = 0;
 
             if (Directory.Exists(fileName))
             {
@@ -95,7 +96,7 @@ namespace Mac_Finder
                 foreach (string s in fileList)
                 {
                     string[] lines = File.ReadAllLines(s);
-                    
+
                     using (System.IO.StreamWriter file = new System.IO.StreamWriter(s))
                     {
                         foreach(string line in lines)
@@ -104,9 +105,19 @@ namespace Mac_Finder
                             {
                                 file.WriteLine(line);
                             }
+                            else
+                            {
+                                count++;
+                                rtbResult.Text = tbMAC.Text.Trim() + " was removed from " + Path.GetFileName(s) + "\n\n";
+                            }
                         }
                     }
                 }
+            }
+
+            if(count == 0)
+            {
+                rtbResult.AppendText( tbMAC.Text.Trim() + " was not found.");
             }
         }
     }

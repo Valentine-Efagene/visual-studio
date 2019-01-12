@@ -32,7 +32,7 @@
             this.btnSelectFolder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFolder = new System.Windows.Forms.TextBox();
-            this.rtcResult = new System.Windows.Forms.RichTextBox();
+            this.rtbResult = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,15 +73,15 @@
             this.tbFolder.Size = new System.Drawing.Size(340, 20);
             this.tbFolder.TabIndex = 2;
             // 
-            // rtcResult
+            // rtbResult
             // 
-            this.rtcResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtcResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtcResult.Location = new System.Drawing.Point(149, 116);
-            this.rtcResult.Name = "rtcResult";
-            this.rtcResult.Size = new System.Drawing.Size(340, 164);
-            this.rtcResult.TabIndex = 3;
-            this.rtcResult.Text = "";
+            this.rtbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbResult.Location = new System.Drawing.Point(149, 116);
+            this.rtbResult.Name = "rtbResult";
+            this.rtbResult.Size = new System.Drawing.Size(340, 164);
+            this.rtbResult.TabIndex = 3;
+            this.rtbResult.Text = "";
             // 
             // button1
             // 
@@ -167,7 +167,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.rtcResult);
+            this.Controls.Add(this.rtbResult);
             this.Controls.Add(this.tbFolder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSelectFolder);
@@ -185,7 +185,7 @@
         private System.Windows.Forms.Button btnSelectFolder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbFolder;
-        private System.Windows.Forms.RichTextBox rtcResult;
+        private System.Windows.Forms.RichTextBox rtbResult;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
