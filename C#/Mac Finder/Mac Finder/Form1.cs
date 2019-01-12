@@ -10,11 +10,11 @@ using System.Text.RegularExpressions;
 
 namespace Mac_Finder
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -130,6 +130,25 @@ namespace Mac_Finder
             {
                 rtbResult.AppendText( tbMAC.Text.Trim() + " was not found.");
             }
+        }
+
+        private void tbFolder_dragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.All;
+                var path = ((string[])e.Data.GetData(DataFormats.FileDrop))[ 0 ];
+
+                if (Directory.Exists(path))
+                {
+                    tbFolder.Text = path;
+                }
+            }
+        }
+
+        private void tbFolder_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
         }
     }
 }
