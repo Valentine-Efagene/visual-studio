@@ -2,16 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>fb8ae4b3-fa30-4831-97c5-be1e2d464bea</ProjectGuid>
+    <ProjectGuid>5cf78e2b-1d6e-424f-bdbe-5dc1cc9a99d0</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>medical_diagnosis.py</StartupFile>
+    <StartupFile>MLP_from_sklearn_page.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>medical_diagnosis</Name>
-    <RootNamespace>medical_diagnosis</RootNamespace>
-    <InterpreterId>Global|PythonCore|2.7</InterpreterId>
+    <Name>MLP_from_sklearn_page</Name>
+    <RootNamespace>MLP_from_sklearn_page</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,10 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="medical_diagnosis.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|2.7" />
+    <Compile Include="MLP_from_sklearn_page.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -1,4 +1,11 @@
 import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.feature_extraction import DictVectorizer
+import sklearn.model_selection as ms
+import cv2
+from sklearn import metrics, tree
+from sklearn.externals.six import StringIO
+import pydot
 
 data = [
     {'age': 33, 'sex': 'F', 'BP': 'high', 'cholesterol': 'high',
@@ -47,10 +54,34 @@ plt.style.use('ggplot')
 age = [d['age'] for d in data]
 sodium = [d['Na'] for d in data]
 potassium = [d['K'] for d in data]
+print(target)
 
-print(age)
+target = [ord(t) - 65 for t in target]
+vec = DictVectorizer(sparse = False)
+data_pre = vec.fit_transform(data)
+#print(vec.get_feature_names())
+#print(data_pre[0])
+data_pre = np.array(data_pre, dtype=np.float32)
+target = np.array(target, dtype=np.float32)
 
-plt.scatter(sodium, potassium)
-plt.xlabel('sodium')
-plt.ylabel('potassium')
-plt.show()
+x_train, x_test, y_train, y_test = ms.train_test_split(data_pre, target, test_size=5, random_state = 42)
+#dtree = cv2.ml.dtree_create()
+#dtree.train(x_train, cv2.ml.ROW_SAMPLE, y_train)
+#y_pre = dtree.predict(x_test)
+#accuracy = metrics.accuracy_score(y_test, dtree.predict(x_test))
+#print(accuracy)
+
+dtc = tree.DecisionTreeClassifier()
+dtc.fit(x_train, y_train)
+train_score = dtc.score(x_train, y_train)
+test_score = dtc.score(x_test, y_test)
+
+print(train_score)
+print(test_score)
+
+tree.export_graphviz(dtc,out_file='tree.dot')
+
+#plt.scatter(sodium, potassium)
+#plt.xlabel('sodium')
+#plt.ylabel('potassium')
+#plt.show()

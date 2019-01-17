@@ -2,16 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>fb8ae4b3-fa30-4831-97c5-be1e2d464bea</ProjectGuid>
+    <ProjectGuid>daa641ad-f6eb-428a-b5ba-10282a8ccd7e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>medical_diagnosis.py</StartupFile>
+    <StartupFile>DecisionTreeRegressionBeyeler.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>medical_diagnosis</Name>
-    <RootNamespace>medical_diagnosis</RootNamespace>
-    <InterpreterId>Global|PythonCore|2.7</InterpreterId>
+    <Name>DecisionTreeRegressionBeyeler</Name>
+    <RootNamespace>DecisionTreeRegressionBeyeler</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,10 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="medical_diagnosis.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|2.7" />
+    <Compile Include="DecisionTreeRegressionBeyeler.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

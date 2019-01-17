@@ -2,16 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>fb8ae4b3-fa30-4831-97c5-be1e2d464bea</ProjectGuid>
+    <ProjectGuid>c2520c4a-780c-4286-85b3-c00edd39b0f9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>medical_diagnosis.py</StartupFile>
+    <StartupFile>MPLRregressor.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>medical_diagnosis</Name>
-    <RootNamespace>medical_diagnosis</RootNamespace>
-    <InterpreterId>Global|PythonCore|2.7</InterpreterId>
+    <Name>MPLRregressor</Name>
+    <RootNamespace>MPLRregressor</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,10 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="medical_diagnosis.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|2.7" />
+    <Compile Include="MPLRregressor.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
