@@ -17,6 +17,10 @@ x_test = np.arange(0.0, 5.0, 0.01)[:, np.newaxis]
 y_1 = regr1.predict(x_test)
 y_2 = regr2.predict(x_test)
 
+
+#Test a single value
+#print(regr2.predict([[30]]))
+
 plt.style.use('ggplot')
 plt.scatter(x, y, c='k', s=50, label='data')
 plt.plot(x_test, y_1, label="max_depth=2", linewidth=5)
