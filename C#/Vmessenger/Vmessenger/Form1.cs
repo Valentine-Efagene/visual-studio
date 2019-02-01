@@ -86,6 +86,11 @@ namespace SocketClient
 
         private void sendBtn_Click(object sender, EventArgs e)
         {
+            send();
+        }
+
+        private void send()
+        {
             try
             {
                 StreamWriter sw = new StreamWriter(stream);
@@ -98,7 +103,7 @@ namespace SocketClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("You are not connected to the intended recipient.");
             }
         }
 
@@ -144,9 +149,13 @@ namespace SocketClient
                     try
                     {
                         client = new TcpClient(addrssTextBox.Text.Trim(' '), port);
-                        listOfConnectedRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + "\n");
-                        stream = client.GetStream();
-                        clientBackgroundWorker.RunWorkerAsync();
+                        
+                        if(client != null)
+                        {
+                            listOfConnectedRichTextBox.AppendText(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + "\n");
+                            stream = client.GetStream();
+                            clientBackgroundWorker.RunWorkerAsync();
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -278,6 +287,7 @@ namespace SocketClient
 
                     if (!(res == DialogResult.Yes))
                     {
+                        c.Close();
                         return;
                     }
 
@@ -313,13 +323,18 @@ namespace SocketClient
 
         private void clientBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            if (stream != null)
+            {
+                statusLabel.Text = "Connected to " + ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + ".";
+            }
+
             StreamWriter sw = new StreamWriter(stream);
             StreamReader sr = new StreamReader(sw.BaseStream);
             string data = null;
 
             try
             {
-                while ((data = sr.ReadLine()) != "exit")
+                while ((data = sr.ReadLine()) != null)
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
@@ -327,6 +342,9 @@ namespace SocketClient
                         chatHistoryRichTextBox.ScrollToCaret();
                     });
                 }
+
+                statusLabel.Text = "Connection to " + ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + " rejected!";
+                listOfConnectedRichTextBox.Text = "";
             }
             catch (Exception ex)
             {
@@ -334,6 +352,7 @@ namespace SocketClient
                 {
                     string a = ex.ToString();
                     statusLabel.Text = "Connection to " + ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString() + " terminated";
+                    listOfConnectedRichTextBox.Text = "";
                 });
             }
         }
@@ -357,6 +376,14 @@ namespace SocketClient
         private void clearChatButton_Click(object sender, EventArgs e)
         {
             chatHistoryRichTextBox.Text = "";
+        }
+
+        private void messageRichTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                send();
+            }
         }
     }
 
