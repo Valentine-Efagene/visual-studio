@@ -1,73 +1,66 @@
-﻿  SnakeGame.cpp
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(58): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(132): error C3861: 'kbhit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(134): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(140): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(142): error C3861: 'exit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(145): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(181): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(183): error C3861: 'exit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(201): error C2065: 'COORD': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(201): error C2146: syntax error: missing ';' before identifier 'coord'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(201): error C2065: 'coord': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(203): error C2065: 'coord': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(203): error C2228: left of '.X' must have class/struct/union
-  c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(203): note: type is 'unknown-type'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(205): error C2065: 'coord': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(205): error C2228: left of '.Y' must have class/struct/union
-  c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(205): note: type is 'unknown-type'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(207): error C2065: 'STD_OUTPUT_HANDLE': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(207): error C3861: 'GetStdHandle': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(207): error C2065: 'coord': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(207): error C3861: 'SetConsoleCursorPosition': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(212): error C2065: 'HANDLE': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(212): error C2146: syntax error: missing ';' before identifier 'a'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(212): error C2065: 'a': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(213): error C2065: 'COORD': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(213): error C2146: syntax error: missing ';' before identifier 'b'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(213): error C2065: 'b': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(215): error C2065: 'b': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(215): error C2228: left of '.X' must have class/struct/union
-  c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(215): note: type is 'unknown-type'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(216): error C2065: 'b': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(216): error C2228: left of '.Y' must have class/struct/union
-  c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(216): note: type is 'unknown-type'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(217): error C2065: 'a': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(217): error C2065: 'STD_OUTPUT_HANDLE': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(217): error C3861: 'GetStdHandle': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(218): error C2065: 'a': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(218): error C2065: 'b': undeclared identifier
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(218): error C3861: 'SetConsoleCursorPosition': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(231): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(250): error C3861: 'kbhit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(284): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(287): error C3861: 'exit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(297): error C3861: 'time': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(298): error C3861: 'srand': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(299): error C3861: 'rand': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(302): error C3861: 'rand': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(309): error C3861: 'rand': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(312): error C3861: 'rand': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(334): error C3861: 'kbhit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(358): error C3861: 'kbhit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(428): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(451): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(452): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(456): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(457): error C3861: 'exit': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(465): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(466): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(472): error C3861: 'toupper': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(475): error C3861: 'toupper': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(487): error C3861: 'time': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(488): error C3861: 'ctime': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(497): error C3861: 'getch': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(498): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(464): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  stdafx.cpp
+  SnakeGame.cpp
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(58): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(132): error C3861: 'kbhit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(134): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(140): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(142): error C3861: 'exit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(145): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(181): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(183): error C3861: 'exit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(201): error C2065: 'COORD': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(201): error C2146: syntax error: missing ';' before identifier 'coord'
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(201): error C2065: 'coord': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(203): error C2065: 'coord': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(205): error C2065: 'coord': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(207): error C2065: 'STD_OUTPUT_HANDLE': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(207): error C3861: 'GetStdHandle': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(207): error C2065: 'coord': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(207): error C3861: 'SetConsoleCursorPosition': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(212): error C2065: 'HANDLE': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(212): error C2146: syntax error: missing ';' before identifier 'a'
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(212): error C2065: 'a': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(213): error C2065: 'COORD': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(213): error C2146: syntax error: missing ';' before identifier 'b'
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(213): error C2065: 'b': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(215): error C2065: 'b': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(216): error C2065: 'b': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(217): error C2065: 'a': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(217): error C2065: 'STD_OUTPUT_HANDLE': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(217): error C3861: 'GetStdHandle': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(218): error C2065: 'a': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(218): error C2065: 'b': undeclared identifier
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(218): error C3861: 'SetConsoleCursorPosition': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(231): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(250): error C3861: 'kbhit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(284): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(287): error C3861: 'exit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(297): error C3861: 'time': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(298): error C3861: 'srand': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(299): error C3861: 'rand': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(302): error C3861: 'rand': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(309): error C3861: 'rand': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(312): error C3861: 'rand': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(334): error C3861: 'kbhit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(358): error C3861: 'kbhit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(428): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(451): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(452): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(456): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(457): error C3861: 'exit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(465): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(466): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(472): error C3861: 'toupper': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(475): error C3861: 'toupper': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(487): error C3861: 'time': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(488): error C3861: 'ctime': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(497): error C3861: 'getch': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(498): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(464): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(468): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(468): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(501): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(501): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(523): error C3861: 'system': identifier not found
-c:\users\valentyne\source\repos\c++\snakegame\snakegame\snakegame.cpp(543): error C3861: 'kbhit': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(523): error C3861: 'system': identifier not found
+f:\code\repos\visual-studio\c++\snakegame\snakegame\snakegame.cpp(543): error C3861: 'kbhit': identifier not found
