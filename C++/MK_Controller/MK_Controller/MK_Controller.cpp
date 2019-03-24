@@ -1,7 +1,7 @@
 // SocketServer.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "MK_Controller_Helper.h";
+#include "MK_Controller_Helper.h"
 
 #define DEFAULT_BUFLEN 512
 #define DEFAULT_PORT "12324"
@@ -93,6 +93,8 @@ int setUpListener()
 		WSACleanup();
 		return 1;
 	}
+
+	return 0;
 }
 
 int createClient()
@@ -108,6 +110,7 @@ int createClient()
 	}
 
 	loop();
+	return 0;
 }
 
 int loop()
@@ -115,9 +118,14 @@ int loop()
 	// Receive until the peer shuts down the connection
 	do {
 		char a[DEFAULT_BUFLEN];
+		char b[DEFAULT_BUFLEN];
 
 		for (int i = 0; i < DEFAULT_BUFLEN; i++) {
 			a[i] = recvbuf[i] = '\n';
+		}
+
+		for (int i = 0; i < DEFAULT_BUFLEN; i++) {
+			b[i] = recvbuf[i] = '\n';
 		}
 
 		iResult = recv(ClientSocket, recvbuf, recvbuflen, 0);
@@ -145,11 +153,36 @@ int loop()
 				}
 			}
 
-			x = getWidth(a);
-			y = getHeight(a);
-			printf("Bytes received: %d\n", iResult);
-			SetCursorPos(x, y);
-			printf("%d %d\n", x, y);
+			for (char c : recvbuf) {
+				if (c >= 'A' && c <= 'Z' || c == ' ') {
+					b[n] = c;
+					n++;
+				}
+			}
+
+			for (char c : b) {
+				switch (c)
+				{
+				case 'A':
+					mouseLeftClick();
+					printf("%c\n", c);
+					break;
+				case 'B':
+					mouseRightClick();
+					printf("%c\n", c);
+					break;
+				default:
+					break;
+				}
+			}
+
+			if (a[0] != '\n') {
+				x = getWidth(a);
+				y = getHeight(a);
+				printf("Bytes received: %d\n", iResult);
+				SetCursorPos(x, y);
+				printf("%d %d\n", x, y);
+			}
 		}
 		else if (iResult == 0) {
 			printf("Connection closing...\n");
@@ -164,7 +197,6 @@ int loop()
 		}
 
 	} while (iResult > 0);
-	getchar();
 	// shutdown the connection since we're done
 	iResult = shutdown(ClientSocket, SD_SEND);
 	if (iResult == SOCKET_ERROR) {
