@@ -18,9 +18,15 @@
 int getWidth(char a[]);
 int getHeight(char a[]);
 int toInt(char a[]);
+bool contains(char a[], char search);
 void pressKey(int keyCode);
-void mouseRightClick();
-void mouseLeftClick();
+void mouseRightClick(INPUT mouse);
+void mouseLeftClick(INPUT mouse);
+void mouseLeftPress(INPUT mouse);
+void mouseLeftRelease(INPUT mouse);
+void mouseRightPress(INPUT mouse);
+void mouseRightRelease(INPUT mouse);
+void mouseScroll(INPUT, int);
 
 int getWidth(char a[])
 {
@@ -96,11 +102,10 @@ void pressKey(int keyCode)
 	SendInput(1, &ip, sizeof(INPUT));
 }
 
-void mouseRightClick()
+void mouseRightClick(INPUT mouse)
 {
-	INPUT mouse;
-
 	// Simulate press
+	ZeroMemory(&mouse, sizeof(INPUT));
 	mouse.type = INPUT_MOUSE;
 	mouse.mi.dwFlags = MOUSEEVENTF_RIGHTDOWN;
 	mouse.mi.time = 0;
@@ -111,11 +116,50 @@ void mouseRightClick()
 	SendInput(1, &mouse, sizeof(INPUT));
 }
 
-void mouseLeftClick()
+void mouseLeftPress(INPUT mouse)
 {
-	INPUT mouse;
+	// Simulate press
+	ZeroMemory(&mouse, sizeof(INPUT));
+	mouse.type = INPUT_MOUSE;
+	mouse.mi.time = 0;
+	mouse.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+	SendInput(1, &mouse, sizeof(INPUT));
+}
 
+void mouseLeftRelease(INPUT mouse)
+{
+	// Simulate release
+	ZeroMemory(&mouse, sizeof(INPUT));
+	mouse.type = INPUT_MOUSE;
+	mouse.mi.time = 0;
+	mouse.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+	SendInput(1, &mouse, sizeof(INPUT));
+}
+
+void mouseRightPress(INPUT mouse)
+{
+	// Simulate press
+	ZeroMemory(&mouse, sizeof(INPUT));
+	mouse.type = INPUT_MOUSE;
+	mouse.mi.dwFlags = MOUSEEVENTF_RIGHTDOWN;
+	mouse.mi.time = 0;
+	SendInput(1, &mouse, sizeof(INPUT));
+}
+
+void mouseRightRelease(INPUT mouse)
+{
+	// Simulate release
+	ZeroMemory(&mouse, sizeof(INPUT));
+	mouse.type = INPUT_MOUSE;
+	mouse.mi.time = 0;
+	mouse.mi.dwFlags = MOUSEEVENTF_RIGHTUP;
+	SendInput(1, &mouse, sizeof(INPUT));
+}
+
+void mouseLeftClick(INPUT mouse)
+{
 	// Left down
+	ZeroMemory(&mouse, sizeof(INPUT));
 	mouse.type = INPUT_MOUSE;
 	mouse.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
 	mouse.mi.time = 0;
@@ -124,4 +168,25 @@ void mouseLeftClick()
 	// Left up
 	mouse.mi.dwFlags = MOUSEEVENTF_LEFTUP;
 	SendInput(1, &mouse, sizeof(INPUT));
+}
+
+void mouseScroll(INPUT mouse, int value) {
+	// Simulate scroll
+	ZeroMemory(&mouse, sizeof(INPUT));
+	mouse.type = INPUT_MOUSE;
+	mouse.mi.dwFlags = MOUSEEVENTF_WHEEL;
+	mouse.mi.time = 0;
+	mouse.mi.mouseData = WHEEL_DELTA * value;
+	SendInput(1, &mouse, sizeof(INPUT));
+}
+
+bool contains(char a[], char search) 
+{
+	for (int i = 0; i < sizeof(a) / sizeof(char); i++) {
+		if (a[i] == search) {
+			return true;
+		}
+	}
+
+	return false;
 }

@@ -115,6 +115,10 @@ int createClient()
 
 int loop()
 {
+
+	INPUT input = {};
+	int scrollValue;
+
 	// Receive until the peer shuts down the connection
 	do {
 		char a[DEFAULT_BUFLEN];
@@ -147,7 +151,7 @@ int loop()
 		if (iResult > 0) {
 
 			for (char c : recvbuf) {
-				if (c >= '0' && c <= '9' || c == ' ') {
+				if (c >= '0' && c <= '9' || c == ' ' || c == '-') {
 					a[n] = c;
 					n++;
 				}
@@ -160,28 +164,47 @@ int loop()
 				}
 			}
 
-			for (char c : b) {
-				switch (c)
-				{
-				case 'A':
-					mouseLeftClick();
-					printf("%c\n", c);
-					break;
-				case 'B':
-					mouseRightClick();
-					printf("%c\n", c);
-					break;
-				default:
-					break;
-				}
-			}
-
-			if (a[0] != '\n') {
+			if (a[0] != '\n' && !contains(a, ' ')) {
+				scrollValue = toInt(a);
+				mouseScroll(input, scrollValue);
+			}else if (a[0] != '\n' && contains(a, ' ')) {
 				x = getWidth(a);
 				y = getHeight(a);
 				printf("Bytes received: %d\n", iResult);
 				SetCursorPos(x, y);
 				printf("%d %d\n", x, y);
+			}
+
+			for (char c : b) {
+				switch (c)
+				{
+				case 'A':
+					mouseLeftClick(input);
+					printf("%c\n", c);
+					break;
+				case 'B':
+					mouseRightClick(input);
+					printf("%c\n", c);
+					break;
+				case 'C':
+					mouseLeftPress(input);
+					printf("%c\n", c);
+					break;
+				case 'D':
+					mouseLeftRelease(input);
+					printf("%c\n", c);
+					break;
+				case 'E':
+					mouseRightPress(input);
+					printf("%c\n", c);
+					break;
+				case 'F':
+					mouseRightRelease(input);
+					printf("%c\n", c);
+					break;
+				default:
+					break;
+				}
 			}
 		}
 		else if (iResult == 0) {
