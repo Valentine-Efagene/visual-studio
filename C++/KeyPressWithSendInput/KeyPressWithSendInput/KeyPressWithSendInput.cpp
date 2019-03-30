@@ -10,10 +10,12 @@ void mouseScroll(int);
 int main()
 {
 	// Pause for 5 seconds
-	Sleep(2000);
-	mouseScroll(-35);
+	Sleep(3000);
 
-	getchar();
+	for (int i = 0; i < 500; i++) {
+		mouseLeftClick();
+	}
+
 	return 0;
 }
 

@@ -93,6 +93,7 @@
             this.messageRichTextBox.TabIndex = 5;
             this.messageRichTextBox.Text = "";
             this.toolTip1.SetToolTip(this.messageRichTextBox, "Type your message here, and press enter to send, or use the send button.");
+            this.messageRichTextBox.TextChanged += new System.EventHandler(this.messageRichTextBox_TextChanged_1);
             this.messageRichTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageRichTextBox_KeyDown);
             // 
             // label1

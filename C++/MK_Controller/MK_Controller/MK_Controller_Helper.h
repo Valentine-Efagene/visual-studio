@@ -15,10 +15,14 @@
 #pragma comment (lib, "Ws2_32.lib")
 // #pragma comment (lib, "Mswsock.lib")
 
+#define DEFAULT_BUFLEN 512
+#define DEFAULT_PORT "12324"
+#define ALLOCATION_FOR_SCREEN_SIZE 20
+
 int getWidth(char a[]);
 int getHeight(char a[]);
 int toInt(char a[]);
-bool contains(char a[], char search);
+bool contains(char a[DEFAULT_BUFLEN], char search);
 void pressKey(int keyCode);
 void mouseRightClick(INPUT mouse);
 void mouseLeftClick(INPUT mouse);
@@ -180,9 +184,9 @@ void mouseScroll(INPUT mouse, int value) {
 	SendInput(1, &mouse, sizeof(INPUT));
 }
 
-bool contains(char a[], char search) 
+bool contains(char a[DEFAULT_BUFLEN], char search, u_int arraySize) 
 {
-	for (int i = 0; i < sizeof(a) / sizeof(char); i++) {
+	for (int i = 0; i < arraySize; i++) {
 		if (a[i] == search) {
 			return true;
 		}

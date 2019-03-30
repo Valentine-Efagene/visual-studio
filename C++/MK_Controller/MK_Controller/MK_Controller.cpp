@@ -3,9 +3,6 @@
 
 #include "MK_Controller_Helper.h"
 
-#define DEFAULT_BUFLEN 512
-#define DEFAULT_PORT "12324"
-
 int width = GetSystemMetrics(SM_CXSCREEN);
 int height = GetSystemMetrics(SM_CYSCREEN);
 
@@ -85,8 +82,8 @@ int setUpListener()
 	}
 
 	freeaddrinfo(result);
-
 	iResult = listen(ListenSocket, SOMAXCONN);
+
 	if (iResult == SOCKET_ERROR) {
 		printf("listen failed with error: %d\n", WSAGetLastError());
 		closesocket(ListenSocket);
@@ -123,6 +120,7 @@ int loop()
 	do {
 		char a[DEFAULT_BUFLEN];
 		char b[DEFAULT_BUFLEN];
+		char button[DEFAULT_BUFLEN];
 
 		for (int i = 0; i < DEFAULT_BUFLEN; i++) {
 			a[i] = recvbuf[i] = '\n';
@@ -136,10 +134,9 @@ int loop()
 		int n = 0;
 
 		// Send the screen size
-		int k = 20;
-		char * c_size = (char *)calloc(k, sizeof(int));
-		sprintf_s(c_size, k * sizeof(c_size), "%d %d\n", width, height);
-		iSendResult = send(ClientSocket, c_size, k * sizeof(c_size), 0);
+		char * c_size = (char *)calloc(ALLOCATION_FOR_SCREEN_SIZE, sizeof(int));
+		sprintf_s(c_size, ALLOCATION_FOR_SCREEN_SIZE * sizeof(c_size), "%d %d\n", width, height);
+		iSendResult = send(ClientSocket, c_size, ALLOCATION_FOR_SCREEN_SIZE * sizeof(c_size), 0);
 		if (iSendResult == SOCKET_ERROR) {
 			printf("send failed with error: %d\n", WSAGetLastError());
 			closesocket(ClientSocket);
@@ -150,29 +147,56 @@ int loop()
 
 		if (iResult > 0) {
 
+			if (contains(recvbuf, '~', DEFAULT_BUFLEN)) {
+				for (char c : recvbuf) {
+					if (c == '\n') {
+						break;
+					}
+					else if (c >= '0' && c <= '9') {
+						button[n] = c;
+						n++;
+					}
+				}
+
+				pressKey(toInt(button));
+
+				continue;
+			}
+
 			for (char c : recvbuf) {
-				if (c >= '0' && c <= '9' || c == ' ' || c == '-') {
+				if (c == '\n') {
+					break;
+				}
+				else if (c >= '0' && c <= '9' || c == ' ' || c == '-') {
 					a[n] = c;
 					n++;
 				}
 			}
 
 			for (char c : recvbuf) {
-				if (c >= 'A' && c <= 'Z' || c == ' ') {
+				if (c == '\n') {
+					break;
+				}
+
+				if (c >= 'A' && c <= 'Z' || c == '~') {
 					b[n] = c;
 					n++;
 				}
 			}
 
-			if (a[0] != '\n' && !contains(a, ' ')) {
+			if (a[0] != '\n' && !contains(a, ' ', DEFAULT_BUFLEN)) {
 				scrollValue = toInt(a);
 				mouseScroll(input, scrollValue);
-			}else if (a[0] != '\n' && contains(a, ' ')) {
+				continue;
+			}
+			
+			if (a[0] != '\n' && contains(a, ' ', DEFAULT_BUFLEN)) {
 				x = getWidth(a);
 				y = getHeight(a);
 				printf("Bytes received: %d\n", iResult);
 				SetCursorPos(x, y);
 				printf("%d %d\n", x, y);
+				continue;
 			}
 
 			for (char c : b) {
@@ -220,6 +244,7 @@ int loop()
 		}
 
 	} while (iResult > 0);
+
 	// shutdown the connection since we're done
 	iResult = shutdown(ClientSocket, SD_SEND);
 	if (iResult == SOCKET_ERROR) {

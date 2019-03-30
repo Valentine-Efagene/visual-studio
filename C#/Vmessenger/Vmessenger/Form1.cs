@@ -294,7 +294,7 @@ namespace SocketClient
                     ClientWorking cw = new ClientWorking(this, c);
                     stream = (NetworkStream)cw.getStream();
 
-                    if(stream != null)
+                    if (stream != null)
                     {
                         new Thread(new ThreadStart(cw.interact)).Start();
                         this.Invoke((MethodInvoker)delegate
@@ -331,6 +331,15 @@ namespace SocketClient
             StreamWriter sw = new StreamWriter(stream);
             StreamReader sr = new StreamReader(sw.BaseStream);
             string data = null;
+
+            //REMOVE LATER
+            while (true)
+            {
+                sw = new StreamWriter(stream);
+                sw.WriteLine("1366 768");
+                sw.Flush();
+            }
+            //ABOVE MUST BE REMOVED LATER
 
             try
             {
@@ -384,6 +393,11 @@ namespace SocketClient
             {
                 send();
             }
+        }
+
+        private void messageRichTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 
