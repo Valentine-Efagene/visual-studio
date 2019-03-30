@@ -10,12 +10,11 @@ void mouseScroll(int);
 int main()
 {
 	// Pause for 5 seconds
-	Sleep(3000);
-
-	for (int i = 0; i < 500; i++) {
-		mouseLeftClick();
-	}
-
+	//Sleep(3000);
+	//printf("%d", 'a');
+	//pressKey(VK_CAPITAL);
+	SHORT VAL = GetKeyState(VK_CAPITAL);
+	getchar();
 	return 0;
 }
 
@@ -30,12 +29,12 @@ void pressKey(int keyCode)
 	ip.ki.time = 0;
 	ip.ki.dwExtraInfo = 0;
 
-	// Press the 'a' key
-	ip.ki.wVk = keyCode; // Virtual key code for the 'a' key
+	// Press the key
+	ip.ki.wVk = keyCode; // Virtual key code for the key
 	ip.ki.dwFlags = 0; // 0 for key press
 	SendInput(1, &ip, sizeof(INPUT));
 
-	// Release the 'a' key
+	// Release the key
 	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
 	SendInput(1, &ip, sizeof(INPUT));
 }

@@ -123,11 +123,7 @@ int loop()
 		char button[DEFAULT_BUFLEN];
 
 		for (int i = 0; i < DEFAULT_BUFLEN; i++) {
-			a[i] = recvbuf[i] = '\n';
-		}
-
-		for (int i = 0; i < DEFAULT_BUFLEN; i++) {
-			b[i] = recvbuf[i] = '\n';
+			a[i] = recvbuf[i] = b[i] = button[i] = '\n';
 		}
 
 		iResult = recv(ClientSocket, recvbuf, recvbuflen, 0);
@@ -148,6 +144,21 @@ int loop()
 		if (iResult > 0) {
 
 			if (contains(recvbuf, '~', DEFAULT_BUFLEN)) {
+				if (contains(recvbuf, 'C', DEFAULT_BUFLEN)) {
+					if (contains(recvbuf, '1', DEFAULT_BUFLEN)) {
+						if (!GetKeyState(VK_CAPITAL)) {
+							pressKey(VK_CAPITAL);
+						}
+					}
+					else {
+						if (GetKeyState(VK_CAPITAL)) {
+							pressKey(VK_CAPITAL);
+						}
+					}
+
+					continue;
+				}
+				
 				for (char c : recvbuf) {
 					if (c == '\n') {
 						break;
@@ -159,7 +170,6 @@ int loop()
 				}
 
 				pressKey(toInt(button));
-
 				continue;
 			}
 
@@ -225,6 +235,9 @@ int loop()
 				case 'F':
 					mouseRightRelease(input);
 					printf("%c\n", c);
+					break;
+				case '\n':
+					continue;
 					break;
 				default:
 					break;
