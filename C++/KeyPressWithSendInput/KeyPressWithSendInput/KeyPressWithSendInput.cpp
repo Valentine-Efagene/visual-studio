@@ -13,7 +13,6 @@ int main()
 	//Sleep(3000);
 	//printf("%d", 'a');
 	//pressKey(VK_CAPITAL);
-	SHORT VAL = GetKeyState(VK_CAPITAL);
 	getchar();
 	return 0;
 }

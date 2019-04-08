@@ -332,15 +332,6 @@ namespace SocketClient
             StreamReader sr = new StreamReader(sw.BaseStream);
             string data = null;
 
-            //REMOVE LATER
-            while (true)
-            {
-                sw = new StreamWriter(stream);
-                sw.WriteLine("1366 768");
-                sw.Flush();
-            }
-            //ABOVE MUST BE REMOVED LATER
-
             try
             {
                 while ((data = sr.ReadLine()) != null)
