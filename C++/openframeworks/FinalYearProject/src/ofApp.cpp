@@ -6,12 +6,12 @@ void ofApp::setup(){
 	h = 240;
 	findHue = 30;
 
-	if (!settings.loadFile("mySettings.xml")) {
+	if (!settings.loadFile("settings.xml")) {
 		ofLogError() << "Couldn't load file";
 	}
 
-	string ip = settings.getValue("IP", "192.168.43.180");
-	int port = settings.getValue("PORT", 12324);
+	string ip = settings.getValue("SETTINGS:IP", "127.0.0.1");
+	int port = settings.getValue("SETTINGS:PORT", 12324);
 
 	ofxTCPSettings setup(ip, port);
 	client.setup(setup);
