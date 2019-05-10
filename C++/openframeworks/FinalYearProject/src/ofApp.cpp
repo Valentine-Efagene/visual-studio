@@ -4,7 +4,9 @@
 void ofApp::setup(){
 	w = 320;  // try to grab at this size.
 	h = 240;
+	FONT_SIZE = 12;
 	findHue = 30;
+	font.load("futura_book.otf", FONT_SIZE);
 
 	if (!settings.loadFile("settings.xml")) {
 		ofLogError() << "Couldn't load file";
@@ -71,13 +73,15 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	const int W = 320, H = 240, MARGIN = 10, SQUARE_WIDTH = 40;
+	string action = "";
 	rgb.draw(0, 0);
-	hsb.draw(320, 0);
-	bri.draw(0, 240);
-	hue.draw(320, 240);
-	sat.draw(0, 480);
-	filtered.draw(320, 480);
-	contours.draw(640, 480);
+	hsb.draw(W, 0);
+	bri.draw(0, H);
+	hue.draw(W, H);
+	sat.draw(0, 2 * H);
+	filtered.draw(W, 2 * H);
+	contours.draw(2 * W, 2 * H);
 
 	ofSetColor(255, 0, 0);
 	ofFill();
@@ -92,8 +96,37 @@ void ofApp::draw(){
 			}
 		}
 
-		ofCircle(contours.blobs[index].centroid.x,
-			contours.blobs[index].centroid.y, 5);
+		if (contours.blobs[index].centroid.y < H / 4) {
+			action += "FORWARD ";
+		}
+
+		if (contours.blobs[index].centroid.y > H * 0.5 - 20) {
+			action += "REVERSE ";
+		}
+
+		if (contours.blobs[index].centroid.x < W / 2 - 0.5 * SQUARE_WIDTH) {
+			action += "LEFT ";
+		}
+
+		if (contours.blobs[index].centroid.x > W / 2 + 0.5 * SQUARE_WIDTH) {
+			action += "RIGHT ";
+		}
+
+		if (action == "") {
+			action = "STOP";
+		}
+
+		ofSetColor(0, 255, 255);
+		font.drawString("POSITION: " + ofToString(contours.blobs[index].centroid.x) + ", "
+			+ ofToString(contours.blobs[index].centroid.y), 2 * W + MARGIN, 2 * FONT_SIZE);
+		font.drawString(action, 2 * W + MARGIN, 3 * FONT_SIZE + 10);
+		ofSetColor(255, 0, 0);
+
+		ofCircle(contours.blobs[index].centroid.x, contours.blobs[index].centroid.y, 5);
+		ofLine(MARGIN, H / 4, W - MARGIN, H / 4);
+		ofLine(MARGIN, H * 0.5 - 20, W - MARGIN, H * 0.5 - 20);
+		ofLine(W / 2 - 0.5 * SQUARE_WIDTH, MARGIN, W / 2 - 0.5 * SQUARE_WIDTH, H - MARGIN);
+		ofLine(W / 2 + 0.5 * SQUARE_WIDTH, MARGIN, W / 2 + 0.5 * SQUARE_WIDTH, H - MARGIN);
 		
 		if (client.isConnected()) {
 			client.sendRaw(std::to_string(contours.blobs[index].centroid.x) + " " +
@@ -101,6 +134,7 @@ void ofApp::draw(){
 		}
 	}
 
+	action = "";
 	ofSetColor(255, 255, 255);
 
 }

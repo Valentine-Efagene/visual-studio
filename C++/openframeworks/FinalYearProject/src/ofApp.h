@@ -27,7 +27,8 @@ class ofApp : public ofBaseApp{
 		ofxXmlSettings settings;
 		ofVideoGrabber vidGrabber;
 		int w, h, rangeLow, rangeHigh;
-		int findHue;
+		int findHue, FONT_SIZE;
+		ofTrueTypeFont font; // standard font
 		ofxCvColorImage rgb, hsb;
 		ofxCvGrayscaleImage hue, sat, bri, filtered;
 		ofxCvContourFinder contours;
