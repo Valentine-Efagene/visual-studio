@@ -29,7 +29,12 @@ namespace MySqlTestApp
 
         private void studentTable_Loaded(object sender, RoutedEventArgs e)
         {
-            db.LoadTable(studentTable);
+            string connectionString = "datasource=localhost; port=3306; username=valentyne; password=#Valentyne101";
+            string databaseName = "students";
+            string tableName = "students";
+            string fileName = "C:\\Users\\valentyne\\Documents\\spreedsheets\\test.xlsx";
+            //db.LoadTable(studentTable, connectionString, databaseName, tableName);
+            db.SaveTableToExcel(fileName, connectionString, databaseName, tableName);
         }
     }
 }

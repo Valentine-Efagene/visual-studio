@@ -13,7 +13,7 @@ namespace MySqlTestApp
 {
     class MySqlHelper
     {
-        public void LoadTable( DataGrid dataGrid, string connectionString, string databaseName, string tableName )
+        public void LoadTable(DataGrid dataGrid, string connectionString, string databaseName, string tableName)
         {
             try
             {

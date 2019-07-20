@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationDrawerPopUpMenu2", "NavigationDrawerPopUpMenu2\NavigationDrawerPopUpMenu2.csproj", "{8EC17DF2-B06C-43B3-88B7-838C92B9AB36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPCourseReg", "NavigationDrawerPopUpMenu2\FPCourseReg.csproj", "{8EC17DF2-B06C-43B3-88B7-838C92B9AB36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

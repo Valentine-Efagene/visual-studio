@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="studentTable" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Loaded="studentTable_Loaded"/>
-        
+        <DataGrid x:Name="studentTable" HorizontalAlignment="Stretch" Height="auto" Margin="10,10,0,0" VerticalAlignment="Stretch" Width="auto" Loaded="studentTable_Loaded"/>
+        <WebBrowser HorizontalAlignment="Left" Height="100" Margin="1020,208,-328,0" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Window>
