@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="FPCourseRegistration.UserControlRegister"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FPCourseRegistration"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Background="White">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="500" Width="400" Background="BlueViolet" Margin="10, 10, 10, 10">
+        <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 10, 10, 10">
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Century Gothic" Height="auto">Name</Label>
+            <TextBox x:Name="TextBoxName" Foreground="Black" FontFamily="Century Gothic" FontSize="22" Margin="50, 0, 50, 0" Background="White" Height="50" BorderBrush="Aqua"></TextBox>
+        </StackPanel>
+    </Grid>
+
+
+</UserControl>

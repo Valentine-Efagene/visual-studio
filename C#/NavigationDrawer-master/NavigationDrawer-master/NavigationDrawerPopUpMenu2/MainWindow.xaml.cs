@@ -56,20 +56,5 @@ namespace NavigationDrawerPopUpMenu2
                     break;
             }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ButtonTable_Click(object sender, RoutedEventArgs e)
-        {
-            studentsTable.Visibility = Visibility.Visible;
-        }
-
-        private void StudentsTable_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

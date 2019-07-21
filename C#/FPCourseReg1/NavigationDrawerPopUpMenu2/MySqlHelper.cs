@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using MySql.Data.MySqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace MySqlTestApp
+namespace FPCourseReg
 {
     class MySqlHelper
     {
