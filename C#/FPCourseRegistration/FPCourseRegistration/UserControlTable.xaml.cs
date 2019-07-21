@@ -22,10 +22,10 @@ namespace FPCourseRegistration
     {
         MySqlHelper db = new MySqlHelper();
 
-        public UserControlTable()
+        public UserControlTable(LoginData data)
         {
             InitializeComponent();
-            string connectionString = "datasource=localhost; port=3306; username=valentyne; password=#Valentyne101";
+            string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
             string databaseName = "students";
             string tableName = "students";
             string fileName = "C:\\Users\\valentyne\\Documents\\spreedsheets\\test.xlsx";

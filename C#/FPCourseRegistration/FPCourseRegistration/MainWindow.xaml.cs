@@ -20,10 +20,17 @@ namespace FPCourseRegistration
     /// </summary>
     public partial class MainWindow : Window
     {
+        LoginData data;
+        string username = null;
+        string password = null;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            data = new LoginData();
+            UserControl usc = new UserControlLogin(data);
+            GridMain.Children.Add(usc);
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -46,11 +53,11 @@ namespace FPCourseRegistration
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
                 case "ItemTable":
-                    usc = new UserControlTable();
+                    usc = new UserControlTable(data);
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemRegister":
-                    usc = new UserControlRegister();
+                    usc = new UserControlRegister(data);
                     GridMain.Children.Add(usc);
                     break;
                 default:
@@ -61,6 +68,13 @@ namespace FPCourseRegistration
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtonData_Click(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            UserControl usc = new UserControlLogin(data);
+            GridMain.Children.Add(usc);
         }
     }
 }

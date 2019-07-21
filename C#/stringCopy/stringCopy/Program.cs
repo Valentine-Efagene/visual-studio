@@ -2,28 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets;
-using System.Threading;
 
-namespace Test
+namespace stringCopy
 {
     class Program
     {
         public string pass;
         public string src = "Value";
 
-        public void setPass(string target, string src)
+        public void setPass(LoginData user)
         {
-            target = src;
+            user.setUserName("Valentine");
         }
 
         static void Main(string[] args)
         {
+            LoginData data = new LoginData();
             Program test = new Program();
-            Console.WriteLine(test.pass);
-            Console.WriteLine(test.src);
+            test.setPass(data);
+            Console.WriteLine(data.getUsername());
         }
     }
 }

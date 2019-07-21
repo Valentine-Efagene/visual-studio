@@ -84,8 +84,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="LoginData.cs" />
+    <Compile Include="UserControlLogin.xaml.cs">
+      <DependentUpon>UserControlLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlTable.xaml.cs">
       <DependentUpon>UserControlTable.xaml</DependentUpon>
@@ -93,7 +94,7 @@
     <Compile Include="UserControlRegister.xaml.cs">
       <DependentUpon>UserControlRegister.xaml</DependentUpon>
     </Compile>
-    <Page Include="Login.xaml">
+    <Page Include="UserControlLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

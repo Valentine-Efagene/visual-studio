@@ -18,11 +18,22 @@ namespace FPCourseRegistration
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Login : UserControl
+    public partial class UserControlLogin : UserControl
     {
-        public Login()
+        string userName;
+        string password;
+        LoginData data = null;
+
+        public UserControlLogin(LoginData data)
         {
             InitializeComponent();
+            this.data = data;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            data.setUserName(TextBoxUserName.Text);
+            data.setPassword(PasswordBoxPassword.Password);
         }
     }
 }

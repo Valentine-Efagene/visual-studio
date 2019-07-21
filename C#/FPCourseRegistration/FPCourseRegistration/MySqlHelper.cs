@@ -32,6 +32,25 @@ namespace FPCourseRegistration
             }
         }
 
+        public void GetStudent(string connectionString, string databaseName, string tableName, string matNumber)
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM " + databaseName + "." + tableName, connection);
+                DataSet dataSet = new DataSet();
+
+                connection.Open();
+                adapter.Fill(dataSet, "students");
+                dataGrid.ItemsSource = dataSet.Tables["students"].DefaultView;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void SaveTableToExcel(string fileName, string connectionString, string databaseName, string tableName)
         {
             try

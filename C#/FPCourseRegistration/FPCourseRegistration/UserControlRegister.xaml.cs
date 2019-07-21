@@ -20,9 +20,19 @@ namespace FPCourseRegistration
     /// </summary>
     public partial class UserControlRegister : UserControl
     {
-        public UserControlRegister()
+        LoginData data = null;
+
+        public UserControlRegister(LoginData data)
         {
             InitializeComponent();
+            this.data = data;
+        }
+
+        private void ButtonFindStudent_Click(object sender, RoutedEventArgs e)
+        {
+            //SELECT `firstName`,`middleName`,`lastName` FROM `students` WHERE matNumber = "ENG1403447"
+            string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
+
         }
     }
 }

@@ -20,6 +20,7 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
+
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
             <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
@@ -30,28 +31,7 @@
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" VerticalAlignment="Bottom" Height="540" Margin="70,0,0,0">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="500" Width="400" Background="#FF31577E" Margin="10, 10, 10, 10">
-                <StackPanel CanVerticallyScroll="True" Orientation="Vertical" Opacity="1" Margin="10, 50, 10, 10">
-                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Century Gothic" Height="auto">Matriculation Number</Label>
-                    <TextBox x:Name="TextBoxMatNumber" Foreground="Black" FontFamily="Century Gothic" FontSize="22" Margin="50, 0, 50, 0" Background="White" Height="50" BorderBrush="Aqua">
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <Label Margin="0, 50, 0, 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Century Gothic" Height="auto">Name</Label>
-                    <TextBox x:Name="TextBoxName" IsEnabled="False" Foreground="Black" FontFamily="Century Gothic" FontSize="22" Margin="50, 0, 50, 0" Background="White" Height="50" BorderBrush="Aqua">
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <Button Content="Get Name" FontFamily="Century Gothic" Margin="50, 10, 50, 10"></Button>
-                </StackPanel>
-                <ScrollBar HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            </Grid>
+            
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Grid.Effect>
@@ -62,7 +42,7 @@
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
                         <Button Content="Settings"/>
-                        <Button Content="Account"/>
+                        <Button Content="Account" Click="ButtonData_Click"/>
                         <Button Content="Help"/>
                         <Separator/>
                         <Button Content="Logout" Click="Button_Click"/>
