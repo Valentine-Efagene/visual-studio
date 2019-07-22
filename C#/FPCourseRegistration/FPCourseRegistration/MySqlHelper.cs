@@ -32,20 +32,46 @@ namespace FPCourseRegistration
             }
         }
 
-        public void GetStudent(string connectionString, string databaseName, string tableName, string matNumber)
+        public string GetStudentName(string connectionString, string databaseName, string tableName, string matNumber)
         {
+            string result = null;
+            matNumber = matNumber.ToUpper().Trim();
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT firstName, middleName, lastName FROM " + databaseName + "." + tableName + " WHERE matNumber=\"" + matNumber + "\"";
+
             try
             {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM " + databaseName + "." + tableName, connection);
-                DataSet dataSet = new DataSet();
-
                 connection.Open();
-                adapter.Fill(dataSet, "students");
-                dataGrid.ItemsSource = dataSet.Tables["students"].DefaultView;
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    result = reader["firstName"].ToString() + " " + reader["middleName"].ToString() + " " + reader["lastName"].ToString();
+                }
+
                 connection.Close();
+
+                return result;
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public void TestConnection(string connectionString)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                connection.Close();
+                MessageBox.Show("Account Verified");
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

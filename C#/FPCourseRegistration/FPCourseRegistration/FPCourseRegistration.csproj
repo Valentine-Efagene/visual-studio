@@ -91,8 +91,8 @@
     <Compile Include="UserControlTable.xaml.cs">
       <DependentUpon>UserControlTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlRegister.xaml.cs">
-      <DependentUpon>UserControlRegister.xaml</DependentUpon>
+    <Compile Include="UserControlFindName.xaml.cs">
+      <DependentUpon>UserControlFindName.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControlLogin.xaml">
       <SubType>Designer</SubType>
@@ -114,7 +114,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControlRegister.xaml">
+    <Page Include="UserControlFindName.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

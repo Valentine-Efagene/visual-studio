@@ -18,11 +18,11 @@ namespace FPCourseRegistration
     /// <summary>
     /// Interação lógica para UserControlHome.xam
     /// </summary>
-    public partial class UserControlRegister : UserControl
+    public partial class UserControlFindName : UserControl
     {
         LoginData data = null;
 
-        public UserControlRegister(LoginData data)
+        public UserControlFindName(LoginData data)
         {
             InitializeComponent();
             this.data = data;
@@ -30,9 +30,10 @@ namespace FPCourseRegistration
 
         private void ButtonFindStudent_Click(object sender, RoutedEventArgs e)
         {
-            //SELECT `firstName`,`middleName`,`lastName` FROM `students` WHERE matNumber = "ENG1403447"
+            MySqlHelper helper = new MySqlHelper();
             string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
-
+            TextBoxName.Text = helper.GetStudentName(connectionString, "students", "students", TextBoxMatNumber.Text);
+            TextBoxName.IsEnabled = true;
         }
     }
 }

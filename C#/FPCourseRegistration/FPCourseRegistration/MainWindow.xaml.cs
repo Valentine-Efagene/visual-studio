@@ -57,7 +57,7 @@ namespace FPCourseRegistration
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemRegister":
-                    usc = new UserControlRegister(data);
+                    usc = new UserControlFindName(data);
                     GridMain.Children.Add(usc);
                     break;
                 default:
