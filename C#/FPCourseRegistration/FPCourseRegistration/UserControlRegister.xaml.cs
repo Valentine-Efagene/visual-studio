@@ -52,20 +52,13 @@ namespace FPCourseRegistration
             }
 
             courses.Add(new Course() { Code = TextBoxCode.Text, Credit = credit});
+            TextBoxCode.Text = "";
+            TextBoxCredit.Text = "";
         }
 
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
 
         }
-    }
-
-    public class Author
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public DateTime DOB { get; set; }
-        public string BookTitle { get; set; }
-        public bool IsMVP { get; set; }
     }
 }
