@@ -75,10 +75,10 @@
                     <Image Height="80" VerticalAlignment="Bottom"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
-                    <ListViewItem x:Name="ItemRegister" Height="60">
+                    <ListViewItem x:Name="ItemFindName" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountSearch" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Register" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Find Name" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemTable" Height="60">
@@ -87,9 +87,9 @@
                             <TextBlock Text="View Database" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="ItemRegister" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="TableEdit" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
