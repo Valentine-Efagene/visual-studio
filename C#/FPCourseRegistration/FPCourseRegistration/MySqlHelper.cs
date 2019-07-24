@@ -39,7 +39,8 @@ namespace FPCourseRegistration
             matNumber = matNumber.ToUpper().Trim();
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT firstName, middleName, lastName FROM " + databaseName + "." + tableName + " WHERE matNumber=\"" + matNumber + "\"";
+            command.CommandText = "SELECT f_first_name, f_middle_name, f_last_name FROM " +
+                databaseName + "." + tableName + " WHERE f_mat_number=\"" + matNumber + "\"";
 
             try
             {
@@ -48,7 +49,8 @@ namespace FPCourseRegistration
 
                 while (reader.Read())
                 {
-                    result = reader["firstName"].ToString() + " " + reader["middleName"].ToString() + " " + reader["lastName"].ToString();
+                    result = reader["f_first_name"].ToString() + " " + reader["f_middle_name"].ToString() +
+                        " " + reader["f_last_name"].ToString();
                 }
 
                 connection.Close();
@@ -59,6 +61,42 @@ namespace FPCourseRegistration
             {
                 MessageBox.Show(ex.Message);
                 return null;
+            }
+        }
+
+        public void RegisterStudents(string connectionString, string databaseName, string tableName, 
+            string matNumber, string firstName, string middleName, string lastName, string s_level )
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = connection.CreateCommand();
+            int level = 0;
+
+            try
+            {
+                Convert.ToInt64(s_level);
+            }
+            catch
+            {
+                MessageBox.Show("Value not acceptable.");
+                return;
+            }
+
+            try
+            {
+                connection.Open();
+                command.CommandText = "INSERT INTO " + databaseName + "." + tableName +
+                    " (f_mat_number, f_first_name, f_middle_name, f_last_name, f_level) VALUES(" + "\"" + matNumber.ToUpper() + "\"" + ", " + 
+                    "\"" + firstName.ToUpper() + "\"" + ", " + "\"" + middleName.ToUpper() + "\"" + ", " + "\"" + 
+                    lastName.ToUpper() + "\"" + ", " + level + ")";
+
+                int ret = command.ExecuteNonQuery();
+                MessageBox.Show(Convert.ToString("DONE"));
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n " + command.CommandText);
             }
         }
 
@@ -88,8 +126,11 @@ namespace FPCourseRegistration
                 connection.Open();
                 foreach( Course course in courses)
                 {
-                    command.CommandText = "INSERT INTO " + databaseName + "." + tableName + " (f_code, f_credit, f_mat_number) VALUES(" + "\"" + course.Code + "\"" + ", " + course.Credit + ", " + "\"" + matNumber + "\"" + ")";
-                    MessageBox.Show(Convert.ToString(command.ExecuteNonQuery()));
+                    command.CommandText = "INSERT INTO " + databaseName + "." + tableName +
+                        " (f_code, f_credit, f_mat_number) VALUES(" + "\"" + course.Code.ToUpper() + "\"" + ", " + course.Credit + ", " +
+                        "\"" + matNumber.ToUpper() + "\"" + ")";
+                    int ret = command.ExecuteNonQuery();
+                    MessageBox.Show(Convert.ToString("DONE"));
                 }
 
                 connection.Close();
@@ -109,7 +150,7 @@ namespace FPCourseRegistration
                 DataSet dataSet = new DataSet();
 
                 connection.Open();
-                adapter.Fill(dataSet, "students");
+                adapter.Fill(dataSet, "T_students");
                 connection.Close();
 
                 ExportDataSetToExcel(dataSet, fileName);

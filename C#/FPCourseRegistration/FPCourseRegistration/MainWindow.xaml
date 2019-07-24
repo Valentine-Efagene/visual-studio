@@ -93,9 +93,9 @@
                             <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="ItemRegisterStudents" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="OpenInNew" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Messages" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>

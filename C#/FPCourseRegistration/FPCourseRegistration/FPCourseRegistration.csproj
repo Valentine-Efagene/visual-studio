@@ -93,6 +93,9 @@
     <Compile Include="UserControlRegister.xaml.cs">
       <DependentUpon>UserControlRegister.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlRegisterStudents.xaml.cs">
+      <DependentUpon>UserControlRegisterStudents.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTable.xaml.cs">
       <DependentUpon>UserControlTable.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControlRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlRegisterStudents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
