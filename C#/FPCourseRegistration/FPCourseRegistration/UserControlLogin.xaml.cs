@@ -20,8 +20,6 @@ namespace FPCourseRegistration
     /// </summary>
     public partial class UserControlLogin : UserControl
     {
-        string userName;
-        string password;
         LoginData data = null;
 
         public UserControlLogin(LoginData data)
