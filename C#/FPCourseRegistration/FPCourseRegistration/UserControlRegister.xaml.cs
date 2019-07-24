@@ -21,11 +21,13 @@ namespace FPCourseRegistration
     /// </summary>
     public partial class UserControlRegister : UserControl
     {
+        LoginData data = null;
         private ObservableCollection<Course> courses = null;
 
         public UserControlRegister( LoginData data)
         {
             InitializeComponent();
+            this.data = data;
             courses = LoadCollectionData();
             DataGridCourseReg.DataContext = courses;
         }
@@ -33,7 +35,7 @@ namespace FPCourseRegistration
         private ObservableCollection<Course> LoadCollectionData()
         {
             ObservableCollection<Course> courses = new ObservableCollection<Course>();
-            courses.Add(new Course(){ Code = "CPE575", Credit = 3});
+            //courses.Add(new Course(){ Code = "CPE575", Credit = 3});
 
             return courses;
         }
@@ -47,8 +49,8 @@ namespace FPCourseRegistration
                 Convert.ToUInt64(TextBoxCredit.Text);
             }catch(Exception ex)
             {
-                MessageBox.Show("Please enter a positive number");
-                return;
+                MessageBox.Show("Please enter a positive number"); 
+                 return;
             }
 
             courses.Add(new Course() { Code = TextBoxCode.Text, Credit = credit});
@@ -58,7 +60,18 @@ namespace FPCourseRegistration
 
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
+            MySqlHelper helper = new MySqlHelper();
 
+            try
+            {
+                string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
+                helper.RegisterCourses(connectionString, "db_course_registration", "t_courses", TextBoxMatNumber.Text.ToUpper(), courses);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter a positive number");
+                return;
+            }
         }
     }
 }

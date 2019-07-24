@@ -32,7 +32,7 @@ namespace FPCourseRegistration
         {
             MySqlHelper helper = new MySqlHelper();
             string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
-            TextBoxName.Text = helper.GetStudentName(connectionString, "students", "students", TextBoxMatNumber.Text);
+            TextBoxName.Text = helper.GetStudentName(connectionString, "db_course_registration", "t_students", TextBoxMatNumber.Text);
             TextBoxName.IsEnabled = true;
         }
     }

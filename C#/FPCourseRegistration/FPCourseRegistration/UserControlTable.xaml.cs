@@ -26,8 +26,8 @@ namespace FPCourseRegistration
         {
             InitializeComponent();
             string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
-            string databaseName = "students";
-            string tableName = "students";
+            string databaseName = "db_course_registration";
+            string tableName = "t_students";
             string fileName = "C:\\Users\\valentyne\\Documents\\spreedsheets\\test.xlsx";
             db.LoadTable(DataGridStudents, connectionString, databaseName, tableName);
             //db.SaveTableToExcel(fileName, connectionString, databaseName, tableName);

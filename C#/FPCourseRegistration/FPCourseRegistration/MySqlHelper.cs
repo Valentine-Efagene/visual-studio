@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -74,6 +75,28 @@ namespace FPCourseRegistration
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RegisterCourses(string connectionString, string databaseName, string tableName, string matNumber, ObservableCollection<Course> courses)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = connection.CreateCommand();
+
+            try
+            {
+                connection.Open();
+                foreach( Course course in courses)
+                {
+                    command.CommandText = "INSERT INTO " + databaseName + "." + tableName + " (f_code, f_credit, f_mat_number) VALUES(" + "\"" + course.Code + "\"" + ", " + course.Credit + ", " + "\"" + matNumber + "\"" + ")";
+                    MessageBox.Show(Convert.ToString(command.ExecuteNonQuery()));
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n " + command.CommandText);
             }
         }
 
