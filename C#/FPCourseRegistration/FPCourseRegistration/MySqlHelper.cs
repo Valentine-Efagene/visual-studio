@@ -150,7 +150,7 @@ namespace FPCourseRegistration
                 DataSet dataSet = new DataSet();
 
                 connection.Open();
-                adapter.Fill(dataSet, "T_students");
+                adapter.Fill(dataSet, "t_students");
                 connection.Close();
 
                 ExportDataSetToExcel(dataSet, fileName);
