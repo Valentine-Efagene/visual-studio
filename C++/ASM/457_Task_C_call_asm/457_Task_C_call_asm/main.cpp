@@ -7,14 +7,26 @@ extern "C" long long int summation(long long a[], long long int);
 
 int main()
 {
-	long long int A[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	long long int length = sizeof(A) / sizeof(long long int);
+	int n;
+	cout << "Length of array = ";
+	cin >> n;
+
+	long long * A = (long long *) malloc(n * sizeof(long long));
+
+	cout << "Enter" << n << " integers" << endl;
+	
+	for (int i = 0; i < n; i++) {
+		cout << i + 1 << ": ";
+		cin >> A[i];
+	}
+
+	long long int length = n;
 	long long int total = summation(A, length);
 	double average = mean(total, length);
 
 	cout << "SUM = " << total << endl;
 	cout << "MEAN = " << average << endl;
-
+	free(A);
 	system("pause");
 	return 0;
 }
