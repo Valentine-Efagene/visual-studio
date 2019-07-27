@@ -21,8 +21,6 @@ namespace FPCourseRegistration
     public partial class MainWindow : Window
     {
         LoginData data;
-        string username = null;
-        string password = null;
 
         public MainWindow()
         {
@@ -61,7 +59,7 @@ namespace FPCourseRegistration
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemRegister":
-                    usc = new UserControlRegister(data);
+                    usc = new UserControlRegisterCourses(data);
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemRegisterStudents":

@@ -10,7 +10,7 @@
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="500" Width="400" Background="#FF31577E" Margin="10, 10, 10, 10">
         <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 50, 10, 10">
             <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Comic Sans MS" Height="auto">User Name</Label>
-            <TextBox x:Name="TextBoxUserName" Foreground="Black" FontFamily="Century Gothic" FontSize="22" Margin="50, 0, 50, 0" Padding="10, 0, 10, 0" Background="White" Height="50" BorderBrush="Aqua">
+            <TextBox x:Name="TextBoxUserName" TextAlignment="Center" Foreground="Black" FontFamily="Century Gothic" FontSize="22" Margin="50, 0, 50, 0" Padding="10, 0, 10, 0" Background="White" Height="50" BorderBrush="Aqua">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>

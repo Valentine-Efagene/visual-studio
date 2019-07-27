@@ -141,6 +141,36 @@ namespace FPCourseRegistration
             }
         }
 
+        public bool IDConfirmed(string connectionString, string databaseName, string tableName, string matNumber, int id)
+        {
+            string matNum = null;
+            matNumber = matNumber.ToUpper().Trim();
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT f_mat_number FROM " +
+                databaseName + "." + tableName + " WHERE f_fingerprint_id = " + id;
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    matNum = reader["f_mat_number"].ToString();
+                }
+
+                connection.Close();
+
+                return matNum == matNumber ? true : false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n " + command.CommandText);
+                return false;
+            }
+        }
+
         public void SaveTableToExcel(string fileName, string connectionString, string databaseName, string tableName)
         {
             try
