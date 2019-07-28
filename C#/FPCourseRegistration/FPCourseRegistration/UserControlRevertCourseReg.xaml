@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="FPCourseRegistration.UserControlRevertCourseReg"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FPCourseRegistration"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <XmlDataProvider x:Key="ComPorts" Source="CommsData.xml" XPath="/Comms/Ports" />
+    </UserControl.Resources>
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="500" Width="400" Background="#FF31577E" Margin="10, 10, 10, 10">
+        <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 100, 10, 10">
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Comic Sans MS" Height="auto">Matriculation Number</Label>
+            <TextBox x:Name="TextBoxMatNumber" TextAlignment="Center" Foreground="Black" FontFamily="Century Gothic" FontSize="22" Margin="50, 0, 50, 0" Padding="10, 0, 10, 0" Background="White" Height="50" BorderBrush="Aqua">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Name="ComboBoxPort" Text="PORT" Background="#FF2196F3" FontFamily="Comic Sans MS" Margin="50, 20, 20, 10" Height="50" MinWidth="130" ItemsSource="{Binding Source={StaticResource ComPorts}}" />
+                <CheckBox x:Name="CheckBoxVerified" Width="50" Height="50" Margin="0, 20, 10, 10"></CheckBox>
+                <Button x:Name="ButtonFingerprint" Content="Check Finger" Height="50" PreviewMouseDown="ButtonFingerprint_PreviewMouseDown" PreviewMouseUp="ButtonFingerprint_PreviewMouseUp"></Button>
+            </StackPanel>
+            <Button x:Name="ButtonDelete" Content="Delete" Height="50" Width="100" Margin="0, 20, 10, 10" Click="ButtonDelete_Click"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

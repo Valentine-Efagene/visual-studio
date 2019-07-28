@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="FPCourseRegistration.UserControlTable"
+﻿<UserControl x:Class="FPCourseRegistration.UserControlCourseRegistrationTable"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,12 +6,11 @@
              xmlns:local="clr-namespace:FPCourseRegistration"
              mc:Ignorable="d" 
              >
-    
+
     <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto">
         <StackPanel>
-            <DataGrid x:Name="DataGridStudents" HorizontalAlignment="Stretch" Height="400" Margin="10,10,0,10" Width="auto"/>
-            <Button x:Name="ButtonSave" Width="100" Margin="10,10,0,10" Content="Save" Click="ButtonSave_Click"></Button>
+            <DataGrid x:Name="DataGridCourses" HorizontalAlignment="Stretch" Height="400" Margin="10,10,0,10" Width="auto"/>
+            <Button x:Name="ButtonSave" Content="Save" Width="100" Margin="10,10,0,10" Click="ButtonSave_Click"></Button>
         </StackPanel>
     </WrapPanel>
-
 </UserControl>

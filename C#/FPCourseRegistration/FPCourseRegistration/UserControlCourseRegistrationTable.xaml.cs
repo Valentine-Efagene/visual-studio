@@ -17,9 +17,9 @@ using System.Windows.Shapes;
 namespace FPCourseRegistration
 {
     /// <summary>
-    /// Interação lógica para UserControlCreate.xam
+    /// Interaction logic for UserControlCourseRegistrationTable.xaml
     /// </summary>
-    public partial class UserControlTable : UserControl
+    public partial class UserControlCourseRegistrationTable : UserControl
     {
         MySqlHelper db = new MySqlHelper();
         LoginData data;
@@ -27,14 +27,14 @@ namespace FPCourseRegistration
         string databaseName;
         string tableName;
 
-        public UserControlTable(LoginData data)
+        public UserControlCourseRegistrationTable(LoginData data)
         {
             InitializeComponent();
             this.data = data;
             connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
             databaseName = "db_course_registration";
-            tableName = "t_students";
-            db.LoadTable(DataGridStudents, connectionString, databaseName, tableName);
+            tableName = "t_courses";
+            db.LoadTable(DataGridCourses, connectionString, databaseName, tableName);
         }
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)

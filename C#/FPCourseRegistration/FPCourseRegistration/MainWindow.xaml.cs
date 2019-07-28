@@ -66,6 +66,10 @@ namespace FPCourseRegistration
                     usc = new UserControlRegisterStudents(data);
                     GridMain.Children.Add(usc);
                     break;
+                case "ItemRegisterCourseRegistrationTable":
+                    usc = new UserControlCourseRegistrationTable(data);
+                    GridMain.Children.Add(usc);
+                    break;
                 default:
                     break;
             }

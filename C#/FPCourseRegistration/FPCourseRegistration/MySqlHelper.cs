@@ -100,6 +100,28 @@ namespace FPCourseRegistration
             }
         }
 
+        public void RevertRegistration(string connectionString, string databaseName, string tableName,
+            string matNumber)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = connection.CreateCommand();
+
+            try
+            {
+                connection.Open();
+                command.CommandText = "DELETE * FROM " + databaseName + "." + tableName + " WHERE f_mat_number=\"" + matNumber.ToUpper().Trim() + "\"";
+
+                int ret = command.ExecuteNonQuery();
+                MessageBox.Show(Convert.ToString("DONE"));
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n " + command.CommandText);
+            }
+        }
+
         public void TestConnection(string connectionString)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);

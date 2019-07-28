@@ -87,6 +87,9 @@
     <Compile Include="Course.cs" />
     <Compile Include="LoginData.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="UserControlCourseRegistrationTable.xaml.cs">
+      <DependentUpon>UserControlCourseRegistrationTable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlLogin.xaml.cs">
       <DependentUpon>UserControlLogin.xaml</DependentUpon>
     </Compile>
@@ -96,12 +99,19 @@
     <Compile Include="UserControlRegisterStudents.xaml.cs">
       <DependentUpon>UserControlRegisterStudents.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlRevertCourseReg.xaml.cs">
+      <DependentUpon>UserControlRevertCourseReg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTable.xaml.cs">
       <DependentUpon>UserControlTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlFindName.xaml.cs">
       <DependentUpon>UserControlFindName.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserControlCourseRegistrationTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlRegisterStudents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlRevertCourseReg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
