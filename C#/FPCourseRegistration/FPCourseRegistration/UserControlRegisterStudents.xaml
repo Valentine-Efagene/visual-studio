@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="400" Width="750" Background="#FF31577E" Margin="10, 10, 10, 10">
         <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 50, 10, 10" Width="350">
+            <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 20, 10, 10" Width="350">
                 <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Comic Sans MS" Height="auto">Matriculation Number</Label>
                 <TextBox x:Name="TextBoxMatNumber" Padding="10, 0, 10, 0" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" Margin="50, 0, 50, 0" Background="White" Height="40" BorderBrush="Aqua">
                     <TextBox.Resources>
@@ -33,8 +33,6 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 50, 10, 10" Width="350">
                 <Label Margin="0, 5, 0, 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Comic Sans MS" Height="auto">Last Name</Label>
                 <TextBox x:Name="TextBoxLastName" Padding="10, 0, 10, 0" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" Margin="50, 0, 50, 0" Background="White" Height="40" BorderBrush="Aqua">
                     <TextBox.Resources>
@@ -43,8 +41,18 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Opacity="1" Margin="10, 50, 10, 10" Width="350">
                 <Label Margin="0, 5, 0, 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Comic Sans MS" Height="auto">Level</Label>
-                <TextBox x:Name="TextBoxLevel" Padding="10, 0, 10, 0" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" Margin="50, 0, 50, 0" Background="White" Height="40" BorderBrush="Aqua">
+                <TextBox x:Name="TextBoxLevel" Padding="10, 0, 10, 0" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" PreviewTextInput="TextBoxLevel_PreviewTextInput" Margin="50, 0, 50, 0" Background="White" Height="40" BorderBrush="Aqua">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Label Margin="0, 5, 0, 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Comic Sans MS" Height="auto">ID</Label>
+                <TextBox x:Name="TextBoxID" Padding="10, 0, 10, 0" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" PreviewTextInput="TextBoxID_PreviewTextInput" Margin="50, 0, 50, 0" Background="White" Height="40" BorderBrush="Aqua">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>

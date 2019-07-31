@@ -65,15 +65,16 @@ namespace FPCourseRegistration
         }
 
         public void RegisterStudents(string connectionString, string databaseName, string tableName, 
-            string matNumber, string firstName, string middleName, string lastName, string s_level )
+            string matNumber, string firstName, string middleName, string lastName, string s_level, string s_id)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand command = connection.CreateCommand();
-            int level = 0;
+            int level = 0, id = 0;
 
             try
             {
-                Convert.ToInt64(s_level);
+                level = Convert.ToInt32(s_level);
+                id = Convert.ToInt32(s_id);
             }
             catch
             {
@@ -85,9 +86,9 @@ namespace FPCourseRegistration
             {
                 connection.Open();
                 command.CommandText = "INSERT INTO " + databaseName + "." + tableName +
-                    " (f_mat_number, f_first_name, f_middle_name, f_last_name, f_level) VALUES(" + "\"" + matNumber.ToUpper() + "\"" + ", " + 
+                    " (f_mat_number, f_first_name, f_middle_name, f_last_name, f_level, f_fingerprint_id) VALUES(" + "\"" + matNumber.ToUpper() + "\"" + ", " + 
                     "\"" + firstName.ToUpper() + "\"" + ", " + "\"" + middleName.ToUpper() + "\"" + ", " + "\"" + 
-                    lastName.ToUpper() + "\"" + ", " + level + ")";
+                    lastName.ToUpper() + "\"" + ", " + level + ", " + id + " )";
 
                 int ret = command.ExecuteNonQuery();
                 MessageBox.Show(Convert.ToString("DONE"));

@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FPCourseRegistration"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="650" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
@@ -41,15 +41,17 @@
                 <TextBlock Text="Options" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
-                        <Button Content="Settings"/>
                         <Button Content="Account" Click="ButtonData_Click"/>
-                        <Button Content="Help"/>
+                        <Separator/>
+                        <Button x:Name="ButtonAbout" Content="About" Click="ButtonAbout_Click"/>
+                        <Separator/>
+                        <Button x:Name="ButtonHelp" Content="Help" Click="ButtonHelp_Click"/>
                         <Separator/>
                         <Button Content="Logout" Click="Button_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Course Registration</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Finger Print Course Registration</TextBlock>
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
             <Grid.Effect>
@@ -84,31 +86,43 @@
                     <ListViewItem x:Name="ItemTable" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Table" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="View Database" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Students Registered" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemRegister" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TableEdit" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="Register Courses" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemRegisterStudents" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="OpenInNew" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Messages" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="Register Students" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemRegisterCourseRegistrationTable" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Table" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Course Registration Table" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="Courses Registered" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemRevertCourseRegistration" Height="60">
+                    <ListViewItem x:Name="ItemRevertCourseReg" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Delete" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Revert Course Registration" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemBackup" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ContentSaveSettings" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Backup" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemRestore" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BackupRestore" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Restore" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +72,16 @@ namespace FPCourseRegistration
                     usc = new UserControlCourseRegistrationTable(data);
                     GridMain.Children.Add(usc);
                     break;
+                case "ItemRevertCourseReg":
+                    usc = new UserControlRevertCourseReg(data);
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemBackup":
+                    Backup();
+                    break;
+                case "ItemRestore":
+                    Restore();
+                    break;
                 default:
                     break;
             }
@@ -85,6 +97,66 @@ namespace FPCourseRegistration
             GridMain.Children.Clear();
             UserControl usc = new UserControlLogin(data);
             GridMain.Children.Add(usc);
+        }
+
+        void Backup()
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            sfd.Filter = "MySQL file (*.sql) | *.sql";
+
+            if (sfd.ShowDialog() == true)
+            {
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    process.StartInfo.FileName = "cmd.exe";
+                    process.StartInfo.Arguments = "/C " +
+                        "mysqldump -u " + data.getUsername() + " -p" + data.getPassword() + " db_course_registration > " + sfd.FileName;
+                    process.Start();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        void Restore()
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            sfd.Filter = "MySQL file (*.sql) | *.sql";
+
+            if (sfd.ShowDialog() == true)
+            {
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    process.StartInfo.FileName = "cmd.exe";
+                    process.StartInfo.Arguments = "/C " +
+                        "mysqldump -u " + data.getUsername() + " -p" + data.getPassword() + " db_course_registration < " + sfd.FileName;
+                    process.Start();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void ButtonAbout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("This is the software part of a course registration " +
+                "project that uses an arduino fingerprint sensor, such as the R307 from adafruit, " +
+                "using Ladyada's fingerprint library.");
+        }
+
+        private void ButtonHelp_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Call: 09034360573");
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,13 +41,26 @@ namespace FPCourseRegistration
                 helper.RegisterStudents(connectionString, "db_course_registration", "t_students", 
                     TextBoxMatNumber.Text.ToUpper(), TextBoxFirstName.Text.ToUpper(),
                     TextBoxMiddleName.Text.ToUpper(), TextBoxLastName.Text.ToUpper(),
-                    TextBoxLevel.Text.ToUpper());
+                    TextBoxLevel.Text.ToUpper(),
+                    TextBoxID.Text.ToUpper());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Please enter a positive number");
                 return;
             }
+        }
+
+        private void TextBoxID_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^1-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void TextBoxLevel_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

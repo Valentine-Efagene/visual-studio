@@ -28,6 +28,5 @@
             <Button Content="Enter Login Credentials" FontFamily="Comic Sans MS" Margin="50, 50, 50, 10" Height="50" Click="Button_Click"></Button>
             <PasswordBox/>
         </StackPanel>
-        <ScrollBar HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
