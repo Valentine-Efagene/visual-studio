@@ -78,6 +78,7 @@ namespace FPCourseRegistration
                 {
                     MySqlHelper helper = new MySqlHelper();
                     string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
+                    matNumber = helper.GetMatNumber(connectionString, "db_course_registration", "t_students", id);
                     fingerVerified = helper.IDConfirmed(connectionString, "db_course_registration", "t_students", matNumber, id);
                 }
 
@@ -178,6 +179,7 @@ namespace FPCourseRegistration
         private void Button_fingerprint_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             fingerPrint.CancelAsync();
+            TextBoxMatNumber.Text = matNumber;
         }
     }
 }

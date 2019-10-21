@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +15,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            string pattern = @"\#\d";
-            string input = "dsjcks dsdj #2 jdsjfksjdc";
-            Regex rgx = new Regex(pattern);
-            MatchCollection mc = rgx.Matches(input);
-            
-            foreach(Match m in mc)
-            {
-                Console.WriteLine(m);
-            }
+            string str = "C:\\Users\\valentyne\\Downloads";
+            Organiser o = new Organiser(str);
+            o.Organise();
         }
     }
 }

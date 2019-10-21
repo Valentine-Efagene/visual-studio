@@ -34,7 +34,8 @@ namespace FPCourseRegistration
             data.setPassword(PasswordBoxPassword.Password);
             MySqlHelper helper = new MySqlHelper();
             string connectionString = "datasource=localhost; port=3306; username=" + data.getUsername() + "; password=" + data.getPassword();
-            helper.TestConnection(connectionString);
+            bool successful = helper.TestConnection(connectionString);
+            this.Visibility = successful ? Visibility.Collapsed : Visibility.Visible;
         }
     }
 }

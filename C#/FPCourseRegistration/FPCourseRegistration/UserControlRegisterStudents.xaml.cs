@@ -26,7 +26,36 @@ namespace FPCourseRegistration
         public UserControlRegisterStudents(LoginData data)
         {
             InitializeComponent();
+            DataObject.AddPastingHandler(TextBoxID, PastingHandler);
+            DataObject.AddPastingHandler(TextBoxLevel, PastingHandler);
             this.data = data;
+        }
+
+        private void PastingHandler(object sender, DataObjectPastingEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            bool textOK = false;
+
+            if (e.DataObject.GetDataPresent(typeof(string)))
+            {
+                string pasteText = e.DataObject.GetData(typeof(string)) as string;
+
+                if (IsNum(pasteText))
+                {
+                    textOK = true;
+                }
+
+                if (!textOK)
+                {
+                    e.CancelCommand();
+                }
+            }
+        }
+
+        private bool IsNum(string str)
+        {
+            Regex regex = new Regex("[0-9]+");
+            return regex.IsMatch(str);
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
@@ -53,14 +82,28 @@ namespace FPCourseRegistration
 
         private void TextBoxID_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^1-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+            e.Handled = !IsNum(e.Text);
         }
 
         private void TextBoxLevel_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+            e.Handled = !IsNum(e.Text);
+        }
+
+        private void TextBoxID_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxLevel_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

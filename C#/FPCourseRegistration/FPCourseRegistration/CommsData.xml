@@ -9,6 +9,27 @@
   <Ports>COM7</Ports>
   <Ports>COM8</Ports>
   <Ports>COM9</Ports>
+  <Ports>COM10</Ports>
+  <Ports>COM11</Ports>
+  <Ports>COM12</Ports>
+  <Ports>COM13</Ports>
+  <Ports>COM14</Ports>
+  <Ports>COM15</Ports>
+  <Ports>COM16</Ports>
+  <Ports>COM17</Ports>
+  <Ports>COM18</Ports>
+  <Ports>COM19</Ports>
+  <Ports>COM20</Ports>
+  <Ports>COM21</Ports>
+  <Ports>COM22</Ports>
+  <Ports>COM23</Ports>
+  <Ports>COM24</Ports>
+  <Ports>COM25</Ports>
+  <Ports>COM26</Ports>
+  <Ports>COM27</Ports>
+  <Ports>COM28</Ports>
+  <Ports>COM29</Ports>
+  <Ports>COM30</Ports>
   <Baud>2400</Baud>
   <Baud>4800</Baud>
   <Baud>9600</Baud>

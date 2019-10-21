@@ -29,8 +29,8 @@
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid Background="#FFDEDEDE">
-        <Grid x:Name="GridMain" VerticalAlignment="Bottom" Height="540" Margin="70,0,0,0">
+    <Grid Background="LightBlue">
+        <Grid x:Name="GridMain" VerticalAlignment="Bottom" Height="540" Margin="70,0,0,0" Background="LightBlue">
             
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
@@ -74,7 +74,7 @@
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
 
-                    <Image Height="80" VerticalAlignment="Bottom"/>
+                    <Image Height="80" VerticalAlignment="Bottom" Source="uniben.png"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="ItemFindName" Height="60">

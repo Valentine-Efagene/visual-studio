@@ -9,7 +9,7 @@
 
     <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto">
         <StackPanel>
-            <DataGrid x:Name="DataGridCourses" HorizontalAlignment="Stretch" Height="400" Margin="10,10,0,10" Width="auto"/>
+            <DataGrid x:Name="DataGridCourses"  IsEnabled="False" HorizontalAlignment="Stretch" Height="400" Margin="10,10,0,10" Width="auto"/>
             <Button x:Name="ButtonSave" Content="Save" Width="100" Margin="10,10,0,10" Click="ButtonSave_Click"></Button>
         </StackPanel>
     </WrapPanel>

@@ -47,6 +47,12 @@ namespace FPCourseRegistration
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (data.getUsername() == null)
+            {
+                MessageBox.Show("Please enter your login credentials.");
+                return;
+            }
+
             UserControl usc = null;
             GridMain.Children.Clear();
 

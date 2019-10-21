@@ -123,7 +123,7 @@ namespace FPCourseRegistration
             }
         }
 
-        public void TestConnection(string connectionString)
+        public bool TestConnection(string connectionString)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -136,7 +136,10 @@ namespace FPCourseRegistration
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
+
+            return true;
         }
 
         public void RegisterCourses(string connectionString, string databaseName, string tableName, string matNumber, ObservableCollection<Course> courses)
@@ -191,6 +194,35 @@ namespace FPCourseRegistration
             {
                 MessageBox.Show(ex.Message + "\n " + command.CommandText);
                 return false;
+            }
+        }
+
+        public string GetMatNumber(string connectionString, string databaseName, string tableName, int id)
+        {
+            string matNum = null;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT f_mat_number FROM " +
+                databaseName + "." + tableName + " WHERE f_fingerprint_id = " + id;
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    matNum = reader["f_mat_number"].ToString();
+                }
+
+                connection.Close();
+
+                return matNum;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n " + command.CommandText);
+                return "";
             }
         }
 
