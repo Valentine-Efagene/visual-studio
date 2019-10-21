@@ -10,6 +10,12 @@ namespace Test
 {
     class Organiser
     {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern IntPtr GetForegroundWindow();
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+
         string directory = null;
         IDictionary<string, string> types_folders = new Dictionary<string, string>
             {
@@ -57,7 +63,7 @@ namespace Test
             IEnumerable<string> files = null;
             IDictionary<string, string> extensions = new Dictionary<string, string>
             {
-                { "video", "mkv|mp4" },
+                { "video", "mkv|mp4|avi" },
                 { "music", "wav|mp3" },
                 { "document", "pdf|doc|docx|txt|py|cpp|m|c|ipynb|xlsx|csv" },
                 { "compressed", "zip|rar" },
@@ -73,6 +79,19 @@ namespace Test
 
             files = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(file => Regex.IsMatch(file, @".+\.(" + extensions[type.ToLower()] + ")$"));
             return files;
+        }
+
+        public string GetActiveWindowTitle()
+        {
+            const int nChars = 256;
+            StringBuilder Buff = new StringBuilder(nChars);
+            IntPtr handle = GetForegroundWindow();
+
+            if (GetWindowText(handle, Buff, nChars) > 0)
+            {
+                return Buff.ToString();
+            }
+            return null;
         }
     }
 }

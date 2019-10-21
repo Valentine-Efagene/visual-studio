@@ -15,9 +15,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            string str = "C:\\Users\\valentyne\\Downloads";
+            string str = "F:\\videos";
             Organiser o = new Organiser(str);
-            o.Organise();
+            Console.WriteLine(o.GetActiveWindowTitle());
         }
     }
 }

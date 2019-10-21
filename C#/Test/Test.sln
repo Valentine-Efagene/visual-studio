@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{645F5B2C-40A1-4451-B99A-527BD6C9CB8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrganiserUML", "..\Organiser\OrganiserUML\OrganiserUML.csproj", "{6ACE8975-A182-425E-9AE8-ADCC343ED493}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{645F5B2C-40A1-4451-B99A-527BD6C9CB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{645F5B2C-40A1-4451-B99A-527BD6C9CB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{645F5B2C-40A1-4451-B99A-527BD6C9CB8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ACE8975-A182-425E-9AE8-ADCC343ED493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ACE8975-A182-425E-9AE8-ADCC343ED493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ACE8975-A182-425E-9AE8-ADCC343ED493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ACE8975-A182-425E-9AE8-ADCC343ED493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
