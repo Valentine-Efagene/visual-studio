@@ -16,9 +16,6 @@ namespace Organiser
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
-        
-        [DllImport("user32.dll")]
-        public static extern int MessageBox(IntPtr hWnd, String text, String caption, int options);
 
         private string directory = null;
         readonly IDictionary<string, string> types_folders = new Dictionary<string, string>
@@ -38,13 +35,6 @@ namespace Organiser
 
         public void Organise()
         {
-            int result = MessageBox(IntPtr.Zero, "Are you sure you want to reorganise this folder?", "Attention!", 4);
-
-            if (result == 7)
-            {
-                return;
-            }
-
             foreach (KeyValuePair<string, string> item in types_folders)
             {
                 foreach (string file in GetFilesOfType(item.Key))
@@ -69,10 +59,10 @@ namespace Organiser
             {
                 { "video", "mkv|mp4|avi" },
                 { "music", "wav|mp3" },
-                { "document", "pdf|doc|docx|txt|py|cpp|m|c|ipynb|xlsx|csv|ppt|pptx" },
+                { "document", "pdf|doc|docx|txt|py|cpp|m|c|ipynb|xlsx|csv|ppt|pptx|accdb|py|cpp|c|html|js|css|m" },
                 { "compressed", "zip|rar" },
                 { "picture", "gif|png|jpg|ico" },
-                { "program", "out|exe" }
+                { "program", "out|exe|bat" }
             };
 
             if (type == "others")
