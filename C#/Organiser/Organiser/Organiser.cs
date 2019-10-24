@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace Organiser
 {
@@ -15,9 +16,12 @@ namespace Organiser
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+        
+        [DllImport("user32.dll")]
+        public static extern int MessageBox(IntPtr hWnd, String text, String caption, int options);
 
-        string directory = null;
-        IDictionary<string, string> types_folders = new Dictionary<string, string>
+        private string directory = null;
+        readonly IDictionary<string, string> types_folders = new Dictionary<string, string>
             {
                 { "video", "Videos" },
                 { "music", "Music" },
@@ -32,28 +36,28 @@ namespace Organiser
             this.directory = GetActiveWindowPath();
         }
 
-        public void CreateFolders(IDictionary<string, string> types_folders)
-        {
-            foreach (KeyValuePair<string, string> item in types_folders)
-            {
-                string newDir = directory + "\\" + item.Value;
-
-                if (!Directory.Exists(newDir))
-                {
-                    Directory.CreateDirectory(newDir);
-                }
-            }
-        }
-
         public void Organise()
         {
-            CreateFolders(types_folders);
+            int result = MessageBox(IntPtr.Zero, "Are you sure you want to reorganise this folder?", "Attention!", 4);
+
+            if (result == 7)
+            {
+                return;
+            }
 
             foreach (KeyValuePair<string, string> item in types_folders)
             {
                 foreach (string file in GetFilesOfType(item.Key))
                 {
-                    File.Move(file, directory + "\\" + item.Value + "\\" + Path.GetFileName(file));
+                    try
+                    {
+                        File.Move(file, directory + "\\" + item.Value + "\\" + Path.GetFileName(file));
+                    }
+                    catch (DirectoryNotFoundException)
+                    {
+                        Directory.CreateDirectory(directory + "\\" + item.Value);
+                        File.Move(file, directory + "\\" + item.Value + "\\" + Path.GetFileName(file));
+                    }
                 }
             }
         }
@@ -65,7 +69,7 @@ namespace Organiser
             {
                 { "video", "mkv|mp4|avi" },
                 { "music", "wav|mp3" },
-                { "document", "pdf|doc|docx|txt|py|cpp|m|c|ipynb|xlsx|csv" },
+                { "document", "pdf|doc|docx|txt|py|cpp|m|c|ipynb|xlsx|csv|ppt|pptx" },
                 { "compressed", "zip|rar" },
                 { "picture", "gif|png|jpg|ico" },
                 { "program", "out|exe" }
