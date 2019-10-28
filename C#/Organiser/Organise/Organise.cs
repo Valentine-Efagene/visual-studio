@@ -16,8 +16,8 @@ namespace Organise
             {
                 Organiser.Organiser organiser = new Organiser.Organiser();
                 organiser.Organise();
-                string s = organiser.GetDirectory() + " has been organised\n";
-                System.IO.File.AppendAllText(@"C: \Users\valentyne\Desktop\log.txt", s);
+                //string s = organiser.GetDirectory() + " has been organised\n";
+                //System.IO.File.AppendAllText(@"C: \Users\valentyne\Desktop\log.txt", s);
             }
         }
     }

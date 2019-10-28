@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organiser", "Organiser\Orga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organise", "Organise\Organise.csproj", "{CE2B19C5-77D2-4561-B1A8-1C379C2697FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree", "Tree\Tree.csproj", "{0A389E19-0CAE-4A34-8A0C-311B333F382F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CE2B19C5-77D2-4561-B1A8-1C379C2697FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2B19C5-77D2-4561-B1A8-1C379C2697FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2B19C5-77D2-4561-B1A8-1C379C2697FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A389E19-0CAE-4A34-8A0C-311B333F382F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A389E19-0CAE-4A34-8A0C-311B333F382F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A389E19-0CAE-4A34-8A0C-311B333F382F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A389E19-0CAE-4A34-8A0C-311B333F382F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
