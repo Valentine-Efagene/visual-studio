@@ -47,8 +47,11 @@ namespace Sticky_Image
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
-                this.DragMove();
+            if (e.ClickCount < 2)
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                    this.DragMove();
+            }
         }
     }
 }
