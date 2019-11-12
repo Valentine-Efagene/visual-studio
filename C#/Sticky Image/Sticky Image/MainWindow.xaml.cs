@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,9 +20,27 @@ namespace Sticky_Image
     /// </summary>
     public partial class MainWindow : Window
     {
+        string path = @"current.txt";
+
         public MainWindow()
         {
             InitializeComponent();
+
+            if (File.Exists(path))
+            {
+                string savedImage = File.ReadAllText(path);
+
+                if(savedImage != "")
+                {
+                    BitmapImage b = new BitmapImage();
+                    b.BeginInit();
+                    b.UriSource = new Uri(savedImage);
+                    b.EndInit();
+
+                    image.Source = b;
+                }
+            }
+
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -35,6 +54,7 @@ namespace Sticky_Image
                     BitmapImage b = new BitmapImage();
                     b.BeginInit();
                     b.UriSource = new Uri(openFileDialog.FileName);
+                    System.IO.File.WriteAllText(path, openFileDialog.FileName);
                     b.EndInit();
 
                     // ... Get Image reference from sender.
@@ -60,6 +80,7 @@ namespace Sticky_Image
             {
                 // Note that you can have more than one file.
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                System.IO.File.WriteAllText(path, files[0]);
 
                 // Assuming you have one file that you care about, pass it off to whatever
                 // handling code you have defined.
