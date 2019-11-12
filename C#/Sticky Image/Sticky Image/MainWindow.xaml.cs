@@ -53,5 +53,36 @@ namespace Sticky_Image
                     this.DragMove();
             }
         }
+
+        private void Image_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                // Note that you can have more than one file.
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                // Assuming you have one file that you care about, pass it off to whatever
+                // handling code you have defined.
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.UriSource = new Uri(files[0]);
+                b.EndInit();
+
+                // ... Get Image reference from sender.
+                var image = sender as Image;
+                // ... Assign Source.
+                image.Source = b;
+            }
+        }
+
+        private void Image_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effects = DragDropEffects.Copy;
+            }
+            else
+                e.Effects = DragDropEffects.None;
+        }
     }
 }

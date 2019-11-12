@@ -10,6 +10,6 @@
         mc:Ignorable="d"
         Title="Sticky Image" Height="400" Width="500">
     <Grid>
-        <Image x:Name="image" Source="image.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Uniform" StretchDirection="Both"/>
+        <Image x:Name="image" Drop="Image_Drop" AllowDrop="True" DragEnter="Image_DragEnter" Source="image.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Uniform" StretchDirection="Both"/>
     </Grid>
 </Window>
