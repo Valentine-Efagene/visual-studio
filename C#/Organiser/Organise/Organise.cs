@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace Organise
 {
     class Organise
     {
-        [DllImport("user32.dll")]
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int MessageBox(IntPtr hWnd, String text, String caption, int options);
 
         static void Main(string[] args)

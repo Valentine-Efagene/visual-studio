@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Runtime.InteropServices;
 using System.Linq;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
 using Tree;
 
 namespace Organiser
@@ -27,8 +27,11 @@ namespace Organiser
         Node<string> document = new Node<string>("Documents");
 
         Node<string> book = new Node<string>("Books");
-        Node<string> pdf = new Node<string>("pdf");
-        Node<string> epub = new Node<string>("epub");
+        Node<string> pdf = new Node<string>("PDF");
+        Node<string> epub = new Node<string>("EPUB");
+
+        Node<string> proteus = new Node<string>("Proteus");
+        Node<string> vhdl = new Node<string>("VHDL");
 
         Node<string> code = new Node<string>("Codes");
         Node<string> java = new Node<string>("Java");
@@ -53,29 +56,33 @@ namespace Organiser
 
         public Organiser()
         {
-            //this.directory = GetActiveWindowPath();
-            this.directory = @"C:\Users\valentyne\Desktop\test2";
+            this.directory = GetActiveWindowPath();
+            //this.directory = @"C:\Users\valentyne\Desktop\test2";
 
             extensions = new Dictionary<Node<string>, string>
             {
+                {pdf, "pdf"},
+                {epub, "epub"},
                 {text, "txt"},
                 {word, "docx|doc"},
                 {spreadsheet, "xlxs|csv"},
                 {presentation, "ppt|pptx"},
                 {corel, "cdr"},
+                {proteus, "pdsbak|pdsprj"},
+                {vhdl, "vhd|vhdl"},
                 {cpp, "cpp"},
+                {c, "c"},
                 {python, "py"},
                 {java, "java"},
                 {arduino, "ino"},
                 {video, "avi|mp4|mkv"},
                 {picture, "gif|png|jpg|ico|JPG|PNG|jpeg|JPEG"},
-                {compressed, "zip|rar"},
+                {compressed, "zip|rar|gz"},
                 {sound, "wav|mp3"},
                 {program, "out|exe|bat|msi" }
             };
 
             document.Children.Add(book);
-
             book.Children.Add(epub);
             book.Children.Add(pdf);
 
@@ -98,6 +105,8 @@ namespace Organiser
             document.Children.Add(database);
             document.Children.Add(text);
             document.Children.Add(presentation);
+            document.Children.Add(proteus);
+            document.Children.Add(vhdl);
         }
 
         public void Organise()
@@ -113,7 +122,8 @@ namespace Organiser
                     catch (DirectoryNotFoundException)
                     {
                         CreateDirectory(item.Key);
-                        File.Move(file, computePath(item.Key) + "\\" + Path.GetFileName(file));
+                        string newFilePath = computePath(item.Key) + "\\" + Path.GetFileName(file);
+                        File.Move(file, newFilePath);
                     }
                 }
             }
@@ -132,12 +142,7 @@ namespace Organiser
             string[] path = pathStack.ToArray();
             pathStack = null;
 
-            foreach (string s in path)
-            {
-                Console.WriteLine(s);
-            }
-
-            string p = @"C:\Users\valentyne\Desktop\test2";
+            string p = directory;
 
             for (int i = 0; i < path.Length; i++)
             {
@@ -159,11 +164,6 @@ namespace Organiser
 
             string[] path = pathStack.ToArray();
             pathStack = null;
-
-            foreach (string s in path)
-            {
-                Console.WriteLine(s);
-            }
             
             string p = directory;
 
