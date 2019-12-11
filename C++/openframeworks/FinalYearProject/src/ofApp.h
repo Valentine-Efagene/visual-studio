@@ -28,6 +28,7 @@ class ofApp : public ofBaseApp{
 		ofVideoGrabber vidGrabber;
 		int w, h, rangeLow, rangeHigh;
 		int findHue, FONT_SIZE;
+		bool start = false;
 		ofTrueTypeFont font; // standard font
 		ofxCvColorImage rgb, hsb;
 		ofxCvGrayscaleImage hue, sat, bri, filtered;

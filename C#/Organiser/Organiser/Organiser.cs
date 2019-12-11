@@ -52,14 +52,14 @@ namespace Organiser
         Node<string> database = new Node<string>("Databases");
         Node<string> text = new Node<string>("Text");
 
-        IDictionary<Node<string>, string> extensions = null;
+        private IDictionary<Node<string>, string> Extensions = null;
 
         public Organiser()
         {
             this.directory = GetActiveWindowPath();
             //this.directory = @"C:\Users\valentyne\Desktop\test2";
 
-            extensions = new Dictionary<Node<string>, string>
+            Extensions = new Dictionary<Node<string>, string>
             {
                 {pdf, "pdf"},
                 {epub, "epub"},
@@ -76,7 +76,7 @@ namespace Organiser
                 {java, "java"},
                 {arduino, "ino"},
                 {video, "avi|mp4|mkv"},
-                {picture, "gif|png|jpg|ico|JPG|PNG|jpeg|JPEG"},
+                {picture, "gif|png|jpg|ico|PNG|jpeg"},
                 {compressed, "zip|rar|gz"},
                 {sound, "wav|mp3"},
                 {program, "out|exe|bat|msi" }
@@ -111,7 +111,7 @@ namespace Organiser
 
         public void Organise()
         {
-            foreach (KeyValuePair<Node<string>, string> item in extensions)
+            foreach (KeyValuePair<Node<string>, string> item in Extensions)
             {
                 foreach (string file in GetFilesOfType(item.Value))
                 {
@@ -182,7 +182,7 @@ namespace Organiser
         {
             IEnumerable<string> files = null;
 
-            files = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(file => Regex.IsMatch(file, @".+\.(" + type + ")$"));
+            files = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(file => Regex.IsMatch(file, @"\.(" + type.ToLower() + ")$"));
             return files;
         }
 

@@ -50,7 +50,6 @@ void ofApp::update(){
 	ofBackground(100, 100, 100);
 	vidGrabber.update();
 
-
 	if (vidGrabber.isFrameNew()) {
 
 		rgb.setFromPixels(vidGrabber.getPixels());
@@ -96,24 +95,29 @@ void ofApp::draw(){
 			}
 		}
 
-		if (contours.blobs[index].centroid.y < H / 4) {
-			action += "FORWARD ";
+		// reverse
+		if (contours.blobs[index].centroid.y < H / 4 && action.length() < 3) {
+			action += "1";
 		}
 
-		if (contours.blobs[index].centroid.y > H * 0.5 - 20) {
-			action += "REVERSE ";
+		//  forward
+		if (contours.blobs[index].centroid.y > H * 0.5 - 20 && action.length() < 3) {
+			action += "2";
 		}
 
-		if (contours.blobs[index].centroid.x < W / 2 - 0.5 * SQUARE_WIDTH) {
-			action += "LEFT ";
+		// right
+		if (contours.blobs[index].centroid.x > W / 2 + 0.5 * SQUARE_WIDTH && action.length() < 3) {
+			action += "3";
 		}
 
-		if (contours.blobs[index].centroid.x > W / 2 + 0.5 * SQUARE_WIDTH) {
-			action += "RIGHT ";
+		// left
+		if (contours.blobs[index].centroid.x < W / 2 - 0.5 * SQUARE_WIDTH && action.length() < 3) {
+			action += "4";
 		}
 
+		// idle
 		if (action == "") {
-			action = "STOP";
+			action = "0";
 		}
 
 		ofSetColor(0, 255, 255);
@@ -127,16 +131,20 @@ void ofApp::draw(){
 		ofLine(MARGIN, H * 0.5 - 20, W - MARGIN, H * 0.5 - 20);
 		ofLine(W / 2 - 0.5 * SQUARE_WIDTH, MARGIN, W / 2 - 0.5 * SQUARE_WIDTH, H - MARGIN);
 		ofLine(W / 2 + 0.5 * SQUARE_WIDTH, MARGIN, W / 2 + 0.5 * SQUARE_WIDTH, H - MARGIN);
-		
+		/*
 		if (client.isConnected()) {
 			client.sendRaw(std::to_string(contours.blobs[index].centroid.x) + " " +
 				std::to_string(contours.blobs[index].centroid.y) + "\n");
+		}*/
+
+		if (client.isConnected() && start) {
+			client.sendRaw(action + "\n");
 		}
+
+		action = "";
 	}
 
-	action = "";
 	ofSetColor(255, 255, 255);
-
 }
 
 //--------------------------------------------------------------
@@ -166,6 +174,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 	findHue = hue.getPixels()[mY * w + mX];
 	printf("%d", findHue);
+	start = true;
 }
 
 //--------------------------------------------------------------

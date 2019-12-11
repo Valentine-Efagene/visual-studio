@@ -1,0 +1,9 @@
+Copyright by Sajjad Gull.
+
+More Source Codes on C Sharpens : Csharpens.com
+
+Link for Explaining : http://www.csharpens.com/2014/03/source-code-for-getting-device-location-in-c-sharp-tutorial.html
+
+Facebook Groups: 
+C# Helper         : https://www.facebook.com/groups/595129730561989/
+Programming Point : https://www.facebook.com/groups/cplearningpoint/
